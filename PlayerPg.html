@@ -18,20 +18,20 @@
 <form method="get">
 <p style="margin-left: -120px; margin-bottom: 10px;">Input values:</p>
 <!-------Use onfocus="if (this.value=='Name') this.value='';" to clear value------->
-    <input type="text" id="1" value="Name" onfocus="this.value=='Name'? this.value='': this.value = this.value;">
+    <input type="text" id="1" value="Name" onfocus="this.value=='Name'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Name' : this.value = this.value">
     
-    <input type="intNumber" id="2" min="1" max="99999" size="5" value="Age" onfocus="this.value=='Age'? this.value='': this.value = this.value;">
+    <input type="intNumber" id="2" min="1" max="99999" size="5" value="Age" onfocus="this.value=='Age'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Age' : this.value = this.value">
     
-    <input type="floatNumber" id="3" min="1.0" max="9999.99" size="6" value="Height" onfocus="this.value=='Height'? this.value='': this.value = this.value;">
+    <input type="floatNumber" id="3" min="1.0" max="9999.99" size="6" value="Height" onfocus="this.value=='Height'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Height' : this.value = this.value">
 <br>
-    <input type="intNumber" id="4" min="1" max="9000" size="6" value="Weight" onfocus="this.value=='Weight'? this.value='': this.value = this.value;">  
+    <input type="intNumber" id="4" min="1" max="9000" size="6" value="Weight" onfocus="this.value=='Weight'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Weight' : this.value = this.value">  
     <select id="5" name="Size">
 		<option value="Size" defaultValue="Size">Size</option>
-        <option value="XS">Extra Small</option>
-        <option value="S">Small</option>
-        <option value="M">Medium</option>
-        <option value="L">Large</option>
-        <option value="XL">Extra Large</option>
+        <option value="Extra Small">Extra Small</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+        <option value="Extra Large">Extra Large</option>
     </select>
     <select id="6" name="Gender">
 		<option value="Gender" selected>Gender</option>
@@ -81,15 +81,15 @@
     </select>
 	<select id="10" name="Alignment">
 		<option value="Alignment" selected>Alignment</option>
-	    <option value="LG">Lawful Good</option>
-        <option value="NG">Neutral Good</option>
-        <option value="CG">Chaotic Good</option>
-        <option value="LN">Lawful Neutral</option>
-        <option value="NN">True Neutral</option>
-        <option value="CN">Chaotic Neutral</option>
-		<option value="LE">Lawful Evil</option>
-		<option value="NE">Neutral Evil</option>
-		<option value="CE">Chaotic Evil</option>
+	    <option value="Lawful Good">Lawful Good</option>
+        <option value="Neutral Good">Neutral Good</option>
+        <option value="Chaotic Good">Chaotic Good</option>
+        <option value="Lawful Neutral">Lawful Neutral</option>
+        <option value="True Neutral">True Neutral</option>
+        <option value="Chaotic Neutral">Chaotic Neutral</option>
+		<option value="Lawful Evil">Lawful Evil</option>
+		<option value="Neutral Evil">Neutral Evil</option>
+		<option value="Chaotic Evil">Chaotic Evil</option>
     </select>
 
 <!------------Make dropdown appear when Other is selected-------->    
@@ -102,21 +102,21 @@
     <br>
 
 	<!--put back value off click-->
-	<input style="margin-left: 20px; margin-right: auto" type="intNumber" id="20" min="8" max="15" size="12" value="Con" name = "Con" onfocus="this.value=='Cons'? this.value='': this.value = this.value;">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="21" min="8" max="15" size="12" value="Str" name="Str" onfocus="this.value=='Str'? this.value='': this.value = this.value;">
+	<input style="margin-left: 20px; margin-right: auto" type="intNumber" id="20" min="8" max="15" size="12" value="Con" name = "Con" onfocus="this.value=='Con'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Con' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="21" min="8" max="15" size="12" value="Str" name="Str" onfocus="this.value=='Str'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Str' : this.value = this.value">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="22" min="8" max="15" size="12" value="Int" name="Int" onfocus="this.value=='Int'? this.value='': this.value = this.value;">
-    <input style="margin-left: 20px; margin-right: auto"  type="intNumber" id="23" min="8" max="15" size="12" value="Char" name="Char" onfocus="this.value=='Char'? this.value='': this.value = this.value;">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="22" min="8" max="15" size="12" value="Int" name="Int" onfocus="this.value=='Int'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Int' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto"  type="intNumber" id="23" min="8" max="15" size="12" value="Char" name="Char" onfocus="this.value=='Char'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Char' : this.value = this.value">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" onfocus="this.value=='Dex'? this.value='': this.value = this.value;">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" onfocus="this.value=='Wis'? this.value='': this.value = this.value;">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" onfocus="this.value=='Dex'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Dex' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" onfocus="this.value=='Wis'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Wis' : this.value = this.value">
 	
 	<input style="margin-left: 50%" type="button" value="Generate Character" onclick="generatePlayer()">
 <br>
 <br>
     <p style="margin-left: -120px; margin-bottom: 10px;">Backstory values:</p>
-    <input type="text" id="landfeat" value="Land Feature" onfocus="if (this.value=='Land Feature') this.value='';">
-    <input type="text" id="country" value="Country Name" onfocus="if (this.value=='Country Name') this.value='';" onblur="if (this.value=='') this.value='Country Name';">
+    <input type="text" id="landfeat" value="Land Feature (Forest)" onfocus="if (this.value=='Land Feature (Forest)') this.value='';" onblur="this.value==''? this.value='Land Feature (Forest)' : this.value = this.value">
+    <input type="text" id="country" value="Country Name" onfocus="if (this.value=='Country Name') this.value='';" onblur="if (this.value=='') this.value='Country Name';" onblur="this.value==''? this.value='Country Name' : this.value = this.value">
     <br>
     <select id="lifestyle" name="Lifestyle">
 		<option value="placeholder" selected>Lifestyle</option>
@@ -140,7 +140,7 @@
 <p id="result"></p>
 <ul id="sonic" class="results"></ul>
 <br>
-<p id="genBackstory"></p>
+<p id="genBackstory" class="story"></p>
     
 
 <script src="PlayerResults.js"></script>
