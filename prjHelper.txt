@@ -1,0 +1,28 @@
+government = ["Autocracy", "Bureaucracy", "Confederacy", "Democracy", "Dictatorship", "Feudalism",
+"Gerontocracy", "Hierarchy", "Magocracy", "Matriarchy", "Militocracy", "Monarchy", "Oligarchy",
+"Patriarchy", "Meritocracy", "Plutocracy", "Republic", "Satrapy", "Kleptocracy", "Theocracy"]
+
+settlement = [["Village",[1000, 1, 0, "small", 2]], ["Town",[6000, 2, 1000, "medium", 20]], 
+["City",[25000, 25, 5000, "large", 500]]];
+
+religion = ["Monotheism", "Dualism", "Animism"];
+Ruling Deity = ["LG", "NG", "CG", "LN", "NN", "CN", "LE", "NE", "CE"]
+Divine Rank ["Greater", "Lesser", "Quasi", "Vestige"]
+
+monsterType = ["Aberrations","Beasts","Celestials","Constructs","Dragons","Elementals","Fey",
+"Fiends", "Giants","Humanoids", "Monstrosities", "Oozes", "Plants", "Undead"]
+
+/* low to high CR */
+monsterRank = [["Flumph","Nothic","Chuul","Mind Flayer","Aboleth"],
+["Black Bear","Polar Bear","Elephant","Swarm of Cranium Rats","T-Rex"],
+["Pegasus","Unicorn","Deva","Ki-rin","Empyrean"],
+["Flying Sword","Animated Armor","Helmed Horror","Shield Guardian","Iron Golem"],
+["Psuedodragon","Faerie Dragon","Young White Dragon","Young Red Shadow Dragon","Dragon Turtle"],
+["ice Mephit","Azer","Salamander","Invisible Stalker","Efreeti"],
+["Pixie","Meenlock","Yeth Hound","Bhuer Hag","Korred"],
+["Dretch","Succubus","Tanarukk","Chain Devil","Rakshasa"],
+["Half-Ogre","Ettin","Oni","Frost Giant","Storm Giant"],
+["Worg","Mimic","Gorgon","Hydra","Kraken"],
+["Gray Ooze","Gelatinous Cube","Ochre Jelly","Slithering Tracker","Black Pudding"],
+["Gas Spore","Awakened Tree","Shambling Mound","Wood Woad","Treant"],
+["Skeleton","Warhorse Skeleton","Wight","Wraith","Vampire"]]

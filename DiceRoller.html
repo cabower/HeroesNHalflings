@@ -2,32 +2,43 @@
 <html lang="en-US">
     <head>
         <title>Game Master Generator</title>
-        <meta charset="utf-8">
+        <meta charset="utf-8" name="viewport" content="width=device-width">
         <link rel="stylesheet" href="HnHcss.css">
+		
     </head>
 <body>
-    
-<h1>Game Master Generator</h1>
+
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="250" width="550">
+<h1>Dice Roller Simulator</h1>
     
     
 <span style="outline-color: darkred; outline-width: medium; outline-style: solid">
 <button><a href="HnH.html"> Main Page</a></button><button><a href="PlayerPg.html"> Players</a></button><button><a href="GM.html"> Game Masters </a><button><a href="DiceRoller.html">Dice Roller</a></button><button><a href="AboutUs.html"> About Us </a></button></button></span>
 
+<br>
+	<p> What sided die do you want to role?</p>
+<div class="die">
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,4)">Roll a D4</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,6)">Roll a D6</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,8)">Roll a D8</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,10)">Roll a D10</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,20)">Roll a D20</button>
+</div>
+<p id="roll"></p>
 
-<form method="get">
-<select id="die" name="Die">
-        <option value="D4">D4</option>
-        <option value="D6">D6</option>
-        <option value="D8">D8</option>
-        <option value="D10">D10</option>
-        <option value="D12">D12</option>
-        <option value="D20">D20</option>
-    </select>    
-</form>
+<script>
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * max) + min;
+}
+</script>
 
-<img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6">
+
+
+
+<img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6; padding-left: 40%">
     
 <div class="footer">
-    <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  Intellectual property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div>      
+    <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div>      
 </body>
 </html>
