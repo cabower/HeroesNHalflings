@@ -4,30 +4,6 @@
         <title>Game Master Generator</title>
         <meta charset="utf-8" name="viewport" content="width=device-width">
         <link rel="stylesheet" href="HnHcss.css">
-		
-		<script>
-		randoNum = function (end) {
-			return Math.floor(Math.random() * 1000)) % end;
-		}
-		
-		var monsterType = ["Aberrations","Beasts","Celestials","Constructs","Dragons","Elementals","Fey",
-"Fiends", "Giants","Humanoids", "Monstrosities", "Oozes", "Plants", "Undead"];
-
-/* low to high CR */
-	var monsterRank = [["Flumph","Nothic","Chuul","Mind Flayer","Aboleth"],
-["Black Bear","Polar Bear","Elephant","Swarm of Cranium Rats","T-Rex"],
-["Pegasus","Unicorn","Deva","Ki-rin","Empyrean"],
-["Flying Sword","Animated Armor","Helmed Horror","Shield Guardian","Iron Golem"],
-["Psuedodragon","Faerie Dragon","Young White Dragon","Young Red Shadow Dragon","Dragon Turtle"],
-["ice Mephit","Azer","Salamander","Invisible Stalker","Efreeti"],
-["Pixie","Meenlock","Yeth Hound","Bhuer Hag","Korred"],
-["Dretch","Succubus","Tanarukk","Chain Devil","Rakshasa"],
-["Half-Ogre","Ettin","Oni","Frost Giant","Storm Giant"],
-["Worg","Mimic","Gorgon","Hydra","Kraken"],
-["Gray Ooze","Gelatinous Cube","Ochre Jelly","Slithering Tracker","Black Pudding"],
-["Gas Spore","Awakened Tree","Shambling Mound","Wood Woad","Treant"],
-["Skeleton","Warhorse Skeleton","Wight","Wraith","Vampire"]];
-		</script>
     </head>
 <body>
 
@@ -45,14 +21,9 @@ the Campaign creation
 <br>
 <br>
 <!-- Monster Generator -->
-<input style="margin-left: 50%;" type="button" value="Monster!">
-<script>
-var rando = randoNum(monsterType.length);
-var message = monsterType[rando] + "\n";
-message += monsterRank[rando].forEach() + "\n";
+<input style="margin-left: 50%;" type="button" value="Monster!" onclick="randomMonster()">
 
-alert(message);
-</script>
+<p id="monster" class="results"></p>
 
 <!-- Event Generator -->
 
@@ -77,6 +48,8 @@ multiple sessions is included
     
 <div class="footer">
     <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p>
-</div>      
+</div>
+    
+<script src="MonsterGenerator.js"></script>
 </body>
 </html>
