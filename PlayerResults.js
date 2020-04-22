@@ -2,25 +2,36 @@
 
 
 function generateBackstory() {
-		var name, age, height, weight, size, gender, race, clazz, sexOr, align, type, lifestyle, pronoun, belongPro, selfPro, backstory, country, landfeat;
+		var name, age, height, weight, sizeIndex, size, genderIndex, gender, raceIndex, race, clazzIndex, clazz, sexOrIndex, sexOr, alignIndex, align, typeIndex, type, lifestyleIndex, lifestyle, pronoun, belongPro, selfPro, backstory, country, landfeat;
 
 	// Get values from form
 		name = document.getElementById("1").value;
 		age = document.getElementById("2").value;
 		height = document.getElementById("3").value;
 		weight = document.getElementById("4").value;
-		size = document.getElementById("5").value;
-		gender = document.getElementById("6").value;
-		race = document.getElementById("7").value;
-		clazz = document.getElementById("8").value;
-		sexOr = document.getElementById("9").value;
-		align = document.getElementById("10").value;
+    
+		sizeIndex = document.getElementById("5");
+        size = sizeIndex.options[sizeIndex.selectedIndex].value;
+		genderIndex = document.getElementById("6");
+        gender = genderIndex.options[genderIndex.selectedIndex].value;
+		raceIndex = document.getElementById("7");
+        race = raceIndex.options[raceIndex.selectedIndex].value;
+    
+		clazzIndex = document.getElementById("8");
+        clazz = clazzIndex.options[clazzIndex.selectedIndex].value;
+		sexOrIndex = document.getElementById("9");
+        sexOr = sexOrIndex.options[sexOrIndex.selectedIndex].value;
+		alignIndex = document.getElementById("10");
+        align = alignIndex.options[alignIndex.selectedIndex].value;
 	
     
         country = document.getElementById("country").value;
         landfeat = document.getElementById("landfeat").value;
-        lifestyle = document.getElementById("lifestyle").value;
-        type = document.getElementById("type").value;
+    
+        lifestyleIndex = document.getElementById("lifestyle");
+        lifestyle = lifestyleIndex.options[lifestyleIndex.selectedIndex].value;
+        typeIndex = document.getElementById("type");
+        type = typeIndex.options[typeIndex.selectedIndex].value;
       
     // set pronouns
     if (gender === "Male") {
@@ -63,9 +74,9 @@ function generateBackstory() {
            backstory = "";
                
        } 
-    
+    console.log(backstory)
     // print backstory
-    document.getElementById("genBackstory").innerHTML = backstory;
+    document.querySelector("#genBackstory").innerHTML = backstory;
 }
     
 

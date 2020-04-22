@@ -9,7 +9,7 @@
 
 <img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="200px" width="450px">
 <h1>Player Generator</h1>
-    
+<!---Note! use onblur for all text fields--->    
     
 <span style="outline-color: darkred; outline-width: medium; outline-style: solid">
 <button><a href="HnH.html">Main Page</a></button><button><a href="PlayerPg.html">Players</a></button><button><a href="GM.html">Game Masters </a></button><button><a href="DiceRoller.html">Dice Roller</a></button><button><a href="AboutUs.html">About Us </a></button></span>
@@ -112,8 +112,8 @@
     <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" onfocus="this.value=='Wis'? this.value='': this.value = this.value;">
 <br>
     <p style="margin-left: -120px; margin-bottom: 10px;">Backstory values:</p>
-    <input type="text" id="landfeat" placeholder="Land Feature">
-    <input type="text" id="country" placeholder="Country Name">
+    <input type="text" id="landfeat" value="Land Feature" onfocus="if (this.value=='Land Feature') this.value='';">
+    <input type="text" id="country" value="Country Name" onfocus="if (this.value=='Country Name') this.value='';" onblur="if (this.value=='') this.value='Country Name';">
     <br>
     <select id="lifestyle" name="Lifestyle">
 		<option value="placeholder" selected>Lifestyle</option>
@@ -280,15 +280,15 @@
 		}
 	}
     
-    
-    
+
 </script>
 
 <!-- Outputs from above will be assembled and printed as a character sheet below -->
     
 <div class="footer">
     <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div> 
-    
 
+
+<script src="PlayerResults.js"></script>
 </body>
 </html>
