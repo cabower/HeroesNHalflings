@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Game Master Generator</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="HnHcss.css">
+		
+		<script>
+		randoNum = function (end) {
+			return Math.floor(Math.random() * 1000)) % end;
+		}
+		
+		var monsterType = ["Aberrations","Beasts","Celestials","Constructs","Dragons","Elementals","Fey",
+"Fiends", "Giants","Humanoids", "Monstrosities", "Oozes", "Plants", "Undead"];
+
+/* low to high CR */
+	var monsterRank = [["Flumph","Nothic","Chuul","Mind Flayer","Aboleth"],
+["Black Bear","Polar Bear","Elephant","Swarm of Cranium Rats","T-Rex"],
+["Pegasus","Unicorn","Deva","Ki-rin","Empyrean"],
+["Flying Sword","Animated Armor","Helmed Horror","Shield Guardian","Iron Golem"],
+["Psuedodragon","Faerie Dragon","Young White Dragon","Young Red Shadow Dragon","Dragon Turtle"],
+["ice Mephit","Azer","Salamander","Invisible Stalker","Efreeti"],
+["Pixie","Meenlock","Yeth Hound","Bhuer Hag","Korred"],
+["Dretch","Succubus","Tanarukk","Chain Devil","Rakshasa"],
+["Half-Ogre","Ettin","Oni","Frost Giant","Storm Giant"],
+["Worg","Mimic","Gorgon","Hydra","Kraken"],
+["Gray Ooze","Gelatinous Cube","Ochre Jelly","Slithering Tracker","Black Pudding"],
+["Gas Spore","Awakened Tree","Shambling Mound","Wood Woad","Treant"],
+["Skeleton","Warhorse Skeleton","Wight","Wraith","Vampire"]];
+		</script>
+    </head>
+<body>
+
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header">    
+<h1>Game Master Generator</h1>
+    
+    
+<span style="outline-color: darkred; outline-width: medium; outline-style: solid">
+<button><a href="HnH.html"> Main Page</a></button><button><a href="PlayerPg.html"> Players</a></button><button><a href="GM.html"> Game Masters </a><button><a href="DiceRoller.html">Dice Roller</a></button><button><a href="AboutUs.html"> About Us </a></button></button></span>
+<!-- 
+Below are A-la-carte options for campaign creation. 
+Each Generator can be used individually or all together for the 
+the Campaign creation 
+-->
+<br>
+<br>
+<!-- Monster Generator -->
+<input style="margin-left: 50%;" type="button" value="Monster!">
+<script>
+var rando = randoNum(monsterType.length);
+var message = monsterType[rando] + "\n";
+message += monsterRank[rando].forEach() + "\n";
+
+alert(message);
+</script>
+
+<!-- Event Generator -->
+
+<!-- NPC Generator -->
+
+<!-- Worldscape Generator -->
+
+<!-- Deity Generator -->
+
+<!-- Puzzle Generator -->
+
+<!-- Riddle Generator -->
+
+<!--
+Below is the Campaign Creator. It will utilize all of the
+separate above generators to create a single session of a 
+campaign. The option to input a starting point to create 
+multiple sessions is included
+-->
+
+<!-- Campaign Generator -->
+    
+<div class="footer">
+    <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  Intellectual property of Caroline Bower, Rachel Shelton, and Trey Jones.</p>
+</div>      
+</body>
+</html>
