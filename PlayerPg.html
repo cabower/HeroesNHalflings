@@ -110,6 +110,9 @@
 <br>
     <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" onfocus="this.value=='Dex'? this.value='': this.value = this.value;">
     <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" onfocus="this.value=='Wis'? this.value='': this.value = this.value;">
+	
+	<input style="margin-left: 50%" type="button" value="Generate Character" onclick="generatePlayer()">
+<br>
 <br>
     <p style="margin-left: -120px; margin-bottom: 10px;">Backstory values:</p>
     <input type="text" id="landfeat" value="Land Feature" onfocus="if (this.value=='Land Feature') this.value='';">
@@ -123,16 +126,14 @@
     </select>
     <select id="type" name="Type">
 		<option value="placeholder" selected>Type</option>
-        <option value="criminal">Tragic</option>
-        <option value="soldier">Heroic</option>
-        <option value="noble">Comedic</option>
+        <option value="tragic">Tragic</option>
+        <option value="heroic">Heroic</option>
+        <option value="comedic">Comedic</option>
     </select>
     
 <br>
 <br>
-    <input style="margin-left: 50%" type="button" value="Generate Character" onclick="generatePlayer()">
-    <br>
-    <button style="margin-left: 50%" onclick="generateBackstory()">Generate Backstory</button>
+    <input style="margin-left: 50%" type="button" onclick="generateBackstory()" value="Generate Backstory">
 </form>  
 
 <br>
@@ -142,146 +143,7 @@
 <p id="genBackstory"></p>
     
 
-<script>
-
-/* Array for character creation 
-		blank arrays used as placeholders so that indexes match ids */
-		var mainArr = [["ZED"],
-		["Trey Jones", "Rachel Nicole Shelton", "Caroline Bower"],
-		["TARDIS"],
-		["TARDIS"],
-		["TARDIS"],
-		["Extra Small", "Small", "Medium", "Large", "Extra Large"],
-		["Male", "Female"], 
-		["Dragonborn","Dwarf","Elf","Gnome","Half-Elf","Halfling","Half-Orc","Human","Tiefling"],
-		["Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Ranger","Rogue","Sorcerer","Warlock","Wizard"],
-		["Straight", "Gay", "Bisexual", "Pansexual", "Asexual"],
-		["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"]];
-	
-		var preSet = [[8, 10, 12, 13, 14, 15],[8, 8, 8, 15, 15, 15]];
-	
-		var message = document.querySelector('#sonic');
-	<!-- message.innerHTML = "Player Generation Complete"; -->	
-	function generatePlayer() {
-				
-		var stat;
-		var statDef;
-		//var formArr = document.body.querySelector("input#"+i+", select");
-		//console.log(formArr);
-		for (var i = 1; i < 11; i++)
-		{
-		// getting the inside of each form input
-		
-			stat = document.getElementById(i);
-			if (i < 5)
-			{
-				statDef = stat.defaultValue;
-				stat = stat.value;
-			}
-			else
-			{
-				statDef = stat[0].value;
-				stat = stat.options[stat.selectedIndex].value;
-			}
-			
-			//test 
-			console.log(mainArr);
-			console.log(i);
-			console.log(stat);
-			console.log(statDef);
-			
-			// check for value inputted different the original
-			if (stat === statDef && mainArr[i].length > 1)
-			{
-				var index = randoNum(mainArr[i].length);
-				stat = mainArr[i][index];			
-			}
-			else if (mainArr[i].length === 1 && mainArr[i][1] === "TARDIS")
-			{
-				stat = randoNum(500);
-			}
-			
-			// create list node, fill it with the new stat and add it to the ul
-			var node = document.createElement("li");
-			node.innerHTML = statDef + ": " + stat;
-			message.appendChild(node);
-		}
-		
-		var statStack = distribution();
-		shuffle(statStack);
-		
-		// add in stats distribution
-		for (var k = 20; k < 26; k++)
-		{
-			node = document.createElement("li");
-			if (document.getElementById(k).value === document.getElementById(k).name)
-			{
-				node.innerHTML = document.getElementById(k).name + ": " + statStack.pop();
-			}
-			else
-			{
-				node.innerHTML = document.getElementById(k).name + ": " + document.getElementById(k).value;
-			}
-		}
-	}
-	
-// backup event listener	
-	function createEventListener() {
-		var submitButton = document.getElementById("submit");
-		if (submitButton.addEventListener) {
-			submitButton.addEventListener("click", generatePlayer,
-				false);
-		}
-		else if (submitButton.attachEvent) {
-			submitButton.attachEvent("onclick", generatePlayer);
-		}
-	}
-	
-	if (window.EventListener) {
-		window.addEventListener("load", createEventListener, false);
-	}
-	else if (window.attachEvent) {
-		window.attachEvent("onload", createEventListener);
-	}
-	
-// distribution of con and such stats
-	function distribution() {
-		var statRange;
-		var norm = document.getElementsByTagName("input")[4];
-		var pro = document.getElementsByTagName("input")[5];
-		
-		if (pro.checked)
-		{
-			statRange = preSet[pro.value];
-		}
-		else
-		{
-			statRange = preSet[norm.value];
-		}
-		
-		return statRange;
-	}
-	
-	// random number generator;
-	function randoNum(end) {
-		var result = Math.floor((Math.random() * end) + 1);
-		console.log(result);
-		return result;
-	}
-	
-	// another helper function to shuffle statsStack
-	function shuffle(arr) {
-		for (var i = 0; i < arr.length; i++)
-		{
-			var j = Math.floor(Math.random() * i);
-			var temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
-		}
-	}
-    
-
-</script>
+<script src="PlayerResults.js"></script>
 
 <!-- Outputs from above will be assembled and printed as a character sheet below -->
     
@@ -289,6 +151,6 @@
     <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div> 
 
 
-<script src="PlayerResults.js"></script>
+
 </body>
 </html>
