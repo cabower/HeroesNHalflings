@@ -20,13 +20,12 @@ span {outline-color: darkred; outline-width: medium; outline-style: solid;}
 
 label {text-align: center; font-size: 20px}
 
-img {max-width: 100%;}
+img {max-width: 100% }
 
-.centerForm {
-    
-}
+.story {margin-left: 10%; margin-right: 20%; text-align: center}
 
-.results {border: none}
+
+.results {border: none; width: auto; margin-left: 40%}
 
 .footer {
     background-color: black;

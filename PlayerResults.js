@@ -71,11 +71,11 @@
 			node = document.createElement("li");
 			if (document.getElementById(k).value === document.getElementById(k).name)
 			{
-				node.innerHTML = document.getElementById(k).name + ": " + statStack.pop();
+				node.innerHTML = document.getElementById(k).name + ":  " + statStack.pop();
 			}
 			else
 			{
-				node.innerHTML = document.getElementById(k).name + ": " + document.getElementById(k).value;
+				node.innerHTML = document.getElementById(k).name + ":  " + document.getElementById(k).value;
 			}
 		}
 	}
@@ -140,7 +140,7 @@
 
 
 function generateBackstory() {
-		var name, age, height, weight, sizeIndex, size, genderIndex, gender, raceIndex, race, clazzIndex, clazz, sexOrIndex, sexOr, alignIndex, align, typeIndex, type, lifestyleIndex, lifestyle, pronoun, belongPro, selfPro, backstory, country, landfeat;
+		var name, age, height, weight, sizeIndex, size, genderIndex, gender, raceIndex, race, clazzIndex, clazz, sexOrIndex, sexOr, alignIndex, align, typeIndex, type, lifestyleIndex, lifestyle, pronoun, belongPro, otherPro, selfPro, backstory, country, landfeat;
 // console test
 console.log(backstory);
 
@@ -177,14 +177,17 @@ console.log(backstory);
     if (gender === "Male") {
         pronoun = "he";
         belongPro = "his";
+        otherPro = "him";
         selfPro = "himself";
     } else if (gender === "Female") {
         pronoun = "she";
         belongPro = "her";
+        otherPro = "her";
         selfPro = "herself";
     } else {
         pronoun = "they";
         belongPro = "their";
+        otherPro = "them";
         selfPro = "themself";
     }
     
@@ -204,16 +207,16 @@ console.log(backstory);
 	
     // build backstory
     if(type === "tragic" && lifestyle === "criminal") {
-           backstory =+ " grew up as an orphan, living on the streets in the capital of " + country + ".  From a young age " + pronoun + " was forced to steal food and pickpocket citizens and visitors to survive.  " + name + " became extremely skilled at " + pronoun + " trade and began to make a name for " + selfPro + " in the criminal world.  One day, " + pronoun + " decided to take on " + belongPro + " largest job yet.  Robbing the house of a noble. " + name + " successfully found and took a large purse of gold coins, only to be discovered on " + belongPro + " way out. " + name + " was forced to flee for " + belongPro + "life from the city and go into hiding.";
+           backstory += " grew up as an orphan, living on the streets in the capital of " + country + ".  From a young age " + pronoun + " was forced to steal food and pickpocket citizens and visitors to survive.  " + name + " became extremely skilled at " + belongPro + " trade and began to make a name for " + selfPro + " in the criminal world.  One day, " + pronoun + " decided to take on " + belongPro + " largest job yet.  Robbing the house of a noble. " + name + " successfully found and took a large purse of gold coins, only to be discovered on " + belongPro + " way out. " + name + " was forced to flee for " + belongPro + " life from the city and go into hiding.";
        } else if (type === "tragic" && lifestyle === "soldier") {
-           backstory =+ " was raised in a small settlement/city in the " + landfeat + " of the land of " + country + ".  When " + pronoun + " was but a young child, " + name + "’s settlement/city was attacked.  All that survived was young " + name + ". " + name + " grew up to become a " + lifestyle + " and made it " + belongPro + " quest to grow in strength and experience so that " + pronoun + " could have vengeance.";
+           backstory += " was raised in a small settlement/city in the " + landfeat + " of the land of " + country + ".  When " + pronoun + " was but a young child, " + name + "’s settlement/city was attacked.  All that survived was young " + name + ". " + name + " grew up to become a " + clazz + " and made it " + belongPro + " quest to grow in strength and experience so that " + pronoun + " could have vengeance.";
        } else if (type === "tragic" && lifestyle === "noble") {
            backstory += "";
                
        } else if (type === "heroic" && lifestyle === "noble") {
-           backstory += " was a child of nobility in the land of " + country + ". " + pronoun + " was brought up with the expectation of eventually taking over for " + pronoun + " parents, however, " + pronoun + " only wanted to focus on learning more about being a " + clazz + ".  One day, the kingdom was attacked by a band of monsters that breached the castle walls. " + name + " fought them back, armed with the tools of a " + clazz + pronoun + " had met long ago, and struck them down single handedly. " + name + "was hailed a hero and from that day forward chose to hunt down monsters and protect innocent people from harm.";         
+           backstory += " was a child of nobility in the land of " + country + ". " + name + " was brought up with the expectation of eventually taking over for " + belongPro + " parents, however, " + pronoun + " only wanted to focus on learning more about being a " + clazz + ".  One day, the kingdom was attacked by a band of monsters that breached the castle walls. " + name + " fought them back, armed with the tools of a " + clazz + " " + pronoun + " had met long ago, and struck them down single handedly. " + name + " was hailed a hero and from that day forward chose to hunt down monsters and protect innocent people from harm.";         
        } else if (type === "heroic" && lifestyle === "soldier"){
-           backstory += " was the child of knights of " + country + ".  Great expectations were held for " + belongPro + " as " + name + "’s parents were both well-known knights of the land. " + name + "’s training was long and rigorous, testing " + belongPro + " strength, endurance, and skill.  Finally, it was time for " + name + " to prove " + selfPro + " and so " + pronoun + " set off on a quest....";
+           backstory += " was the child of knights of " + country + ".  Great expectations were held for " + otherPro + " as " + name + "’s parents were both well-known knights of the land. " + name + "’s training was long and rigorous, testing " + belongPro + " strength, endurance, and skill.  Finally, it was time for " + name + " to prove " + selfPro + " and so " + pronoun + " set off on a quest....";
        } else if (type === "heroic" && lifestyle === "criminal") {
            backstory += "";
            
