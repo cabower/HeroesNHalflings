@@ -79,12 +79,12 @@ function generateDiety() {
 
 
 /* Riddle Generator */
-
-// global var for riddle and answer
-var riddleNum = randoNum(10);
+function pickRiddle(){
+    return randoNum(10);
+}
 
 function generateRiddle () {
-    
+    var riddleNum = pickRiddle();
     var riddle;
     
     if (riddleNum === 0) {
@@ -112,12 +112,9 @@ function generateRiddle () {
     }
     
     document.querySelector("#riddle").innerHTML = riddle;
-
-}
-
-// Paired answer to riddle
-function generateAnswer() {
     
+    // Paired answer to riddle
+    function generateAnswer() {
     var answer;
     if (riddleNum === 0) {
         answer = "Nothing";
@@ -145,4 +142,26 @@ function generateAnswer() {
     
     document.querySelector("#answer").innerHTML = answer;
     
+    }
+    
+    var getAnswer = generateAnswer();
 }
+
+// Hides and reveals answer to riddle
+  function toggleAnswer() {
+
+    var answer = document.getElementById('answer');
+    var displaySetting = answer.style.display;
+    var answerButton = document.getElementById('answerButton');
+
+
+    if (displaySetting == 'block') {
+      answer.style.display = 'none';
+      answerButton.value = 'Show Answer';
+    }
+    else {
+      answer.style.display = 'block';
+      answerButton.value = 'Hide Answer';
+    }
+  }
+
