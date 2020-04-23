@@ -66,11 +66,11 @@ function generateDiety() {
 	var message = "";
 	var rando = randoNum(religion.length);
 	
-	message += "Religion: " + religion[rando] + "\n";
+	message += "Religion: " + religion[rando] + "<br>";
 	rando = randoNum(aRow.length);
 	message += "Alignment: " + aRow[rando];
 	rando = randoNum(aCol.length);
-	message += aCol[rando] + "\n";
+	message += aCol[rando] + "<br>";
 	rando = randoNum(divineRank.length);
 	message += "Divine Rank: " + divineRank[rando];
 	
@@ -92,21 +92,21 @@ function generateRiddle () {
     } else if (riddleNum === 1) {
         riddle = "What runs around a city but never moves?";
     } else if (riddleNum === 2) {
-        riddle = "Iron roof, glass walls, " + <br> + "Burns and burns " + <br> + "And never falls. " + <br> + "What am I?";
+        riddle = "Iron roof, glass walls, <br> Burns and burns  <br> And never falls. <br> What am I?";
     } else if (riddleNum === 3) {
-        riddle = "I have rivers without water, " + <br> + "Forests without trees, " + <br> + "Mountains without rocks, " + <br> + "Towns without houses.";
+        riddle = "I have rivers without water, <br> Forests without trees,  <br> Mountains without rocks, <br> Towns without houses.";
     } else if (riddleNum === 4) {
-        riddle = "I weaken all men for hours each day." + <br> + "I show you strange visions while you are away." + <br> + "I take you by night, by day take you back," + <br> + "None suffer to have me, but do from my lack.";
+        riddle = "I weaken all men for hours each day. <br> I show you strange visions while you are away. <br> I take you by night, by day take you back, <br> None suffer to have me, but do from my lack.";
     } else if (riddleNum === 5) {
-        riddle = "It wears a leather coat, " + <br> + "to keep its skins in working order." + <br> + "Escorts you to other realms," + <br> + "without a magic portal. ";
+        riddle = "It wears a leather coat, <br> to keep its skins in working order. <br> Escorts you to other realms, <br> without a magic portal. ";
     } else if (riddleNum === 6) {
-        riddle = "Two friends stand and travel together," + <br> + "one nearly useless without the other";
+        riddle = "Two friends stand and travel together, <br> one nearly useless without the other";
     } else if (riddleNum === 7) {
-        riddle = "Two men drink poisoned Iced Tea." + <br> + "One man drinks his fast and lives." + <br> + "The other man drinks his slow and dies." + <br> + "How is this possible?";
+        riddle = "Two men drink poisoned Iced Tea. <br> One man drinks his fast and lives. <br> The other man drinks his slow and dies. <br> How is this possible?";
     } else if (riddleNum === 8) {
-        riddle = "Two bodies in one," + <br> + "the longer I stand," + <br> + "the faster I run.";
+        riddle = "Two bodies in one, <br> the longer I stand, <br> the faster I run.";
     }  else if (riddleNum === 9) {
-        riddle = "Today he is there to make you merry" + <br> + "And he will torture you tomorrow." + <br> + "Yet he is also there to ease the pain," + <br> + "When you are lost in grief and sorrow.";
+        riddle = "Today he is there to make you merry <br> And he will torture you tomorrow. <br> Yet he is also there to ease the pain, <br> When you are lost in grief and sorrow.";
     } else {
         riddle = "Error 404";
     }
@@ -117,6 +117,8 @@ function generateRiddle () {
 
 // Paired answer to riddle
 function generateAnswer() {
+    
+    var answer;
     if (riddleNum === 0) {
         answer = "Nothing";
     } else if (riddleNum === 1) {

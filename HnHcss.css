@@ -25,7 +25,9 @@ img {max-width: 100% }
 .story {margin-left: 10%; margin-right: 20%; text-align: center}
 
 
-.results {border: none; width: auto; margin-left: 40%}
+.results {border: none; width: auto; text-align: center; margin-left: 5%}
+
+.character {border: none; width: auto; margin-left: 40%}
 
 .footer {
     background-color: black;
@@ -67,3 +69,16 @@ a:visited#easterEgg2 {
 a:hover#easterEgg2 {
         color:rgb(185, 150, 0);        
     }
+
+
+div#GMbuttonsL {
+    margin-left: -60%;
+    margin-top: 20px;
+}
+
+
+div#GMbuttonsR {
+    margin-left: 30%;
+    margin-top: -210px;
+    margin-bottom: 20%;
+}
