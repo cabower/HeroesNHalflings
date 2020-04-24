@@ -38,7 +38,7 @@ var NPCrace = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "H
 
 var NPCclass = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 
-var NPCjob = ["Commoner", "Noble", "Criminal", "Bartender", "Guard", "Merchant"];
+var NPCjob = ["Commoner", "Noble", "Criminal", "Bartender", "Guard", "Merchant", "Herbalist", "Fisherman", "Innkeeper"];
 
 var NPCsexOr = ["straight", "gay", "asexual", "bisexual", "pansexual"];
 
@@ -129,12 +129,12 @@ function generateNPC() {
     gender = NPCgender[randoNum(5)];
     size = NPCsize[randoNum(5)];
     race = NPCrace[randoNum(9)];
-    clazz = NPCclass[randoNum(15)];
+    clazz = NPCclass[randoNum(12)];
     sexOr = NPCsexOr[randoNum(5)];
     align = NPCalignment[randoNum(9)];
-    job = NPCjob[randoNum(6)];
+    job = NPCjob[randoNum(9)];
     
-    NPC = "Your NPC is a " + age + " year old " + " " + sexOr + " " + gender + " " + race + " who is considered " + size + " for their race. They are a " + align + " " + clazz + "/" + job +"."
+    NPC = "Your NPC is a " + age + " year old " + " " + sexOr + " " + gender + " " + race + " who is considered " + size + " for their race. They are a " + align + " " + clazz + " / " + job +"."
     
     document.querySelector("#NPC").innerHTML = NPC;
 }
