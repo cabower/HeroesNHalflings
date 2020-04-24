@@ -17,7 +17,7 @@
 	
 		var message = document.querySelector('#sonic');
 	/* message.innerHTML = "Player Generation Complete"; */	
-	function generatePlayer() {
+function generatePlayer() {
 				
 		var stat;
 		var statDef;
@@ -134,15 +134,13 @@
 			arr[j] = temp;
 		}
 	}
-    
+
 
 /* Get input from Player form and create backstory */
 
 
 function generateBackstory() {
 		var name, age, height, weight, sizeIndex, size, genderIndex, gender, raceIndex, race, clazzIndex, clazz, sexOrIndex, sexOr, alignIndex, align, typeIndex, type, lifestyleIndex, lifestyle, pronoun, belongPro, otherPro, selfPro, backstory, country, landfeat;
-// console test
-console.log(backstory);
 
 	// Get values from form
 		name = document.getElementById("1").value;
@@ -193,6 +191,13 @@ console.log(backstory);
     
 
 	backstory = name;
+    
+    // pick random value for size
+    if (size === sizeIndex[0].value)
+	{
+		size = sizeIndex.options[randoNum(5)].value;
+	}
+    
 	// pick random values for lifestyle
 	if (lifestyle === lifestyleIndex[0].value)
 	{
@@ -211,28 +216,20 @@ console.log(backstory);
        } else if (type === "tragic" && lifestyle === "soldier") {
            backstory += " was raised in a small settlement/city in the " + landfeat + " of the land of " + country + ".  When " + pronoun + " was but a young child, " + name + "’s settlement/city was attacked.  All that survived was young " + name + ". " + name + " grew up to become a " + clazz + " and made it " + belongPro + " quest to grow in strength and experience so that " + pronoun + " could have vengeance.";
        } else if (type === "tragic" && lifestyle === "noble") {
-           backstory += "";
-               
+           backstory += " was lovingly raised by " + pronoun + " parents and servants in the land of " + country + ". " + belongPro + " parents were nobility, but kind and just to all in their domain. One day a band of strangers sought an audience with " + name + "'s parents, only to slaughter them and their guards and plunder anything of value they could find. ";               
        } else if (type === "heroic" && lifestyle === "noble") {
            backstory += " was a child of nobility in the land of " + country + ". " + name + " was brought up with the expectation of eventually taking over for " + belongPro + " parents, however, " + pronoun + " only wanted to focus on learning more about being a " + clazz + ".  One day, the kingdom was attacked by a band of monsters that breached the castle walls. " + name + " fought them back, armed with the tools of a " + clazz + " " + pronoun + " had met long ago, and struck them down single handedly. " + name + " was hailed a hero and from that day forward chose to hunt down monsters and protect innocent people from harm.";         
        } else if (type === "heroic" && lifestyle === "soldier"){
            backstory += " was the child of knights of " + country + ".  Great expectations were held for " + otherPro + " as " + name + "’s parents were both well-known knights of the land. " + name + "’s training was long and rigorous, testing " + belongPro + " strength, endurance, and skill.  Finally, it was time for " + name + " to prove " + selfPro + " and so " + pronoun + " set off on a quest....";
        } else if (type === "heroic" && lifestyle === "criminal") {
-           backstory += "";
-           
+           backstory += " had many dreams and ambitions, but saving a group of children from slavery hadn't been on " + belongPro + " list.  Even so, when " + pronoun + " stumbled across a cage full of dirty, piteous children in a corrupt merchant's cellar, " + pronoun + " did not hesitate picking the lock. " + name + " managed to spirit them away to safety in the " + landfeat + "s of " + country + ". From that day, " + name + " vowed to thwart the plans and business of all whom " + pronoun + " deemed corrupt. ";
        } else if (type === "comedic" && lifestyle === "criminal") {
-           backstory += "";
-       
+           backstory += " was raised by a band of criminals in a traveling carinval. One day, they were found stealing and had to pack up and leave quickly and quietly in the night. They unknowingly left " + name + " behind.  The next day " + pronoun + " went looking for " + belongPro + " troop but instead stumbled across a party of travelers.  Mistaking " + otherPro + " for a well-known warrior of the same name, they insisted " + name + " join them on their quest. " + name + " quickly complied upon seeing " + belongPro + " troop's latest victim posting hastily made wanted posters throughout the town.";       
        } else if (type === "comedic" && lifestyle === "noble") {
-           backstory += "";
-               
+           backstory += " was a naive noble who had only known pleasure and riches all " + belongPro + " life. One fateful day, " + pronoun + " got terribly lost while riding in the " + landfeat + " of " + country + ". After several days, " + name + " came across a group of travelers who did not know the way back to " + name + "'s home, heartily invited " + belongPro + " to join them. ";
        } else if (type === "comedic" && lifestyle === "soldier") {
-           backstory += "";
-               
+           backstory += " was raised to be a formidable soldier, but when the time came to actually begin using " + belongPro + " training " + pronoun + " found that by some happenstance, " + pronoun + " barely had to fight at all. Almost every foe that " + name + " faced befell some misfortune during the battle. There was the Ogre that spontaeously died of a heart attack, the Black Bear that was crushed by a falling tree, and the time " + name + " was suffering from allergies and had eaten copious amounts of garlic bread, causing " + otherPro + " to kill a Vampire by sneezing on it.  Intent on proving " + belongPro + " worth, " + name + " decided to go on a quest, to kill a foe non-accidently.";
        } 
-    console.log(backstory);
-	console.log(type);
-	console.log(lifestyle);
 	
     // print backstory
     document.querySelector("#genBackstory").innerHTML = backstory;

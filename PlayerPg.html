@@ -114,6 +114,8 @@
 	<input style="margin-left: 50%" type="button" value="Generate Character" onclick="generatePlayer()">
 <br>
 <br>
+<p id="result"></p>
+<ul id="sonic" class="character"></ul>
     <p style="margin-left: -120px; margin-bottom: 10px;">Backstory values:</p>
     <input type="text" id="landfeat" value="Land Feature (Forest)" onfocus="if (this.value=='Land Feature (Forest)') this.value='';" onblur="this.value==''? this.value='Land Feature (Forest)' : this.value = this.value">
     <input type="text" id="country" value="Country Name" onfocus="if (this.value=='Country Name') this.value='';" onblur="if (this.value=='') this.value='Country Name';" onblur="this.value==''? this.value='Country Name' : this.value = this.value">
@@ -137,8 +139,6 @@
 </form>  
 
 <br>
-<p id="result"></p>
-<ul id="sonic" class="character"></ul>
 <br>
 <p id="genBackstory" class="story"></p>
     
