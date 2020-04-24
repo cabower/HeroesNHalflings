@@ -24,10 +24,26 @@ var monsterRank = [["Flumph","Nothic","Chuul","Mind Flayer","Aboleth"],["Black B
 ["Psuedodragon","Faerie Dragon","Young White Dragon","Young Red Shadow Dragon","Dragon Turtle"],
 ["Ice Mephit","Azer","Salamander","Invisible Stalker","Efreeti"],["Pixie","Meenlock","Yeth Hound","Bhuer Hag","Korred"],["Dretch","Succubus","Tanarukk","Chain Devil","Rakshasa"],
 ["Half-Ogre","Ettin","Oni","Frost Giant","Storm Giant"],
-[],
+["Goblin", "Lizalfos", "Vampyre", "Merfolk", "Orc"],
 ["Worg","Mimic","Gorgon","Hydra","Kraken"],
 ["Gray Ooze","Gelatinous Cube","Ochre Jelly","Slithering Tracker","Black Pudding"],
 ["Gas Spore","Awakened Tree","Shambling Mound","Wood Woad","Treant"],["Skeleton","Warhorse Skeleton","Wight","Wraith","Vampire"]];
+
+/* NPC fields */
+var NPCgender = ["male", "female", "agender", "non-binary", "genderfluid"];
+
+var NPCsize = ["tiny", "small", "average", "large", "gigantic"];
+
+var NPCrace = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"];
+
+var NPCclass = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
+
+var NPCjob = ["Commoner", "Noble", "Criminal", "Bartender", "Guard", "Merchant"];
+
+var NPCsexOr = ["straight", "gay", "asexual", "bisexual", "pansexual"];
+
+var NPCalignment = ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"];
+
 
 /* helper function to create a random number */
 function randoNum(end) {
@@ -39,8 +55,8 @@ function generateMonster() {
 	var rando = randoNum(monsterType.length);
 	var message = monsterType[rando] + ": ";
 	var rank = monsterRank[rando][randoNum(5)];
-    message += rank + "\n";
-
+    message += rank + "<br>";
+    
 	document.querySelector("#monster").innerHTML = message;
     
 }
@@ -53,7 +69,19 @@ function generateEvent() {
 
 /* NPC Generator */
 function generateNPC() {
-	
+	var age, gender, size, race, clazz, job, sexOr, align, NPC;
+    age = randoNum(100);
+    gender = NPCgender[randoNum(5)];
+    size = NPCsize[randoNum(5)];
+    race = NPCrace[randoNum(9)];
+    clazz = NPCclass[randoNum(15)];
+    sexOr = NPCsexOr[randoNum(5)];
+    align = NPCalignment[randoNum(9)];
+    job = NPCjob[randoNum(6)];
+    
+    NPC = "Your NPC is a " + age + " year old " + " " + sexOr + " " + gender + " " + race + " who is considered " + size + " for their race. They are a " + align + " " + clazz + "/" + job +"."
+    
+    document.querySelector("#NPC").innerHTML = NPC;
 }
 
 /* World Generator */
@@ -147,6 +175,7 @@ function generateRiddle () {
     var getAnswer = generateAnswer();
 }
 
+
 // Hides and reveals answer to riddle
   function toggleAnswer() {
 
@@ -163,5 +192,5 @@ function generateRiddle () {
       answer.style.display = 'block';
       answerButton.value = 'Hide Answer';
     }
-  }
+}
 
