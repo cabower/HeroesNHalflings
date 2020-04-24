@@ -64,7 +64,62 @@ function generateMonster() {
 
 /* Event generator */
 function generateEvent() {
-	
+	var noncombat, omen, merchant, eventNum, allEvents;
+    
+    noncombat = "Non-combat: ";
+    omen = "Omen: ";
+    merchant = "Merchant: ";
+    eventNum = randoNum(10);
+    
+    if(eventNum === 0) {
+        noncombat += "The players encounter a group of more experienced adventurers heading in the other direction. If the players are polite, they are given some healing potions.";
+        omen += "A roll of thunder is heard in the distance.";
+        merchant += "Only useful item for sale is a potion of vitality, 25gp.";
+    } else if (eventNum === 1) {
+        noncombat += "A naked gnome runs across the path, gasps at the party, then runs back. Cannot be pursued.";
+        omen += "A lone yellow flower is growing in the middle of the path.";
+        merchant += "Studded leather armour and basic weapons are for sale.";
+    } else if (eventNum === 2) {
+        noncombat += "The players find an encampment of well armed, friendly humans. They may stay the night here and avoid a random encounter for the night.";
+        omen += "A pool of blood shines darkly on the side of the path.";
+        merchant += "You encounter a Gem & Jewelery merchant (500gp worth of loot)";
+    } else if (eventNum === 3) {
+        noncombat += "A song of battle. The next combat encounter grants double xp reward.";
+        omen += "The earth shakes briefly.";
+        merchant += "Five healing potions, 30gp each are for sale.";
+    } else if (eventNum === 4) {
+        noncombat += "A stranger on the road tells each PC to repent of their sins. He knows details.";
+        omen += "A beautiful white horse dashes past the party and disappears.";
+        merchant += "Fisherman selling his most recent catch";
+    } else if (eventNum === 5) {
+        noncombat += "A goblin falls out of the sky and splatters in front of the party. No logical source of the goblin can be seen.";
+        omen += "The sun bursts through an overclouded sky.";
+        merchant += "Bug catcher. A DC15 Nature check reveals a cartomoth, that will show them a shortcut if released. 10gp.";
+    } else if (eventNum === 6) {
+        noncombat += "There is an unusually vocal chorus of birdsong. Druids, Hunters, Clerics gain inspiration.";
+        omen += "A shadow drifts over the party.";
+        merchant += "Hunters bounty. Fresh meat, some herbs.";
+    } else if (eventNum === 7) {
+        noncombat += "A local ranger gives the party directions to their next destination, but he’s an a****** that sends them the wrong way. Increase the journey length.";
+        omen += "A flower girl skips down the path towards the party, but disappears before she reaches them.";
+        merchant += "Herbalist (can give directions).";
+    } else if (eventNum === 8) {
+        noncombat += "Abandoned, unidentifiable Shrine - If the party doesn’t make an offering, they trigger a combat encounter. ";
+        omen += "A man is trapped under a log. If the party helps him, he disappears - it was an illusion.";
+        merchant += "Basic adventuring equipment.";
+    } else if (eventNum === 9) {
+        noncombat += "A stranger asks for directions from the party to the last town they left. If they help him, he gives them 1D6x10 gold when they next appear in town, if ever. ";
+        omen += "An arrow strikes a nearby tree, with a note attached to it. The note reads “You are a fool for looking!” No source of the arrow can be found.";
+        merchant += "Advanced weapons for sale...for a high price.";
+    } else {
+        noncombat += "Error 404";
+        omen += "Error 404";
+        merchant += "Error 404";
+    }
+    
+    allEvents = noncombat + "<br><br>" + omen + "<br><br>" + merchant;
+    
+    document.querySelector("#event").innerHTML = allEvents;
 }
 
 /* NPC Generator */

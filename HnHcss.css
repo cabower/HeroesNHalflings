@@ -28,6 +28,8 @@ img {max-width: 100% }
 
 .results {border: none; width: auto; text-align: center; margin-left: 5%}
 
+.resultsLeft {border: none; width: auto; text-align: left; margin-left: 5%}
+
 .character {border: none; width: auto; margin-left: 40%}
 
 .footer {
