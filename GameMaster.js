@@ -1,5 +1,16 @@
 /* GameMaster.js */
 
+/* event location */
+var eventLocation = ["Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hill", "Mountain" "Swamp", 
+"Underdark", "Underwater", "Urban", "Inside a Building", " Ruins", "Cliff Face", "Feywild", "Shadowfell", 
+"Several Connected Mesas", "Glacier", "Back of a Gargantuan Creature"];
+
+/* encounter arrays */
+var encounterType = [ "Festival", "Arrival of an Important NPC", "concecration of a temple", "Procession of ghosts", "planar conjunction", "Arena Event", "Trial", "Start of a War", "Start of a skirmish", "combat", "Dungeon"];
+var possibleLoot = ["Gold", "Potion", "poison", "Gem", "Art Object", "Trinket", "Armor", "Weapon"]; 
+var lootState = ["Magic ", "Cursed", " "];
+
+
 /* government types */
 var government = ["Autocracy", "Bureaucracy", "Confederacy", "Democracy", "Dictatorship", "Feudalism","Gerontocracy", "Hierarchy", "Magocracy", "Matriarchy", "Militocracy", "Monarchy", "Oligarchy", "Patriarchy", "Meritocracy", "Plutocracy", "Republic", "Satrapy", "Kleptocracy", "Theocracy"];
 
@@ -19,15 +30,20 @@ var divineRank = ["Greater", "Lesser", "Quasi", "Vestige"];
 var monsterType = ["Aberrations", "Beasts", "Celestials", "Constructs", "Dragons", "Elementals", "Fey", "Fiends", "Giants", "Humanoids", "Monstrosities", "Oozes", "Plants", "Undead"];
 
 /* low to high CR */
-var monsterRank = [["Flumph","Nothic","Chuul","Mind Flayer","Aboleth"],["Black Bear","Polar Bear","Elephant","Swarm of Cranium Rats","T-Rex"],["Pegasus","Unicorn","Deva","Ki-rin","Empyrean"],
+var monsterRank = [["Flumph","Nothic","Chuul","Mind Flayer","Aboleth"],
+["Black Bear","Polar Bear","Elephant","Swarm of Cranium Rats","T-Rex"],
+["Pegasus","Unicorn","Deva","Ki-rin","Empyrean"],
 ["Flying Sword","Animated Armor","Helmed Horror","Shield Guardian","Iron Golem"],
 ["Psuedodragon","Faerie Dragon","Young White Dragon","Young Red Shadow Dragon","Dragon Turtle"],
-["Ice Mephit","Azer","Salamander","Invisible Stalker","Efreeti"],["Pixie","Meenlock","Yeth Hound","Bhuer Hag","Korred"],["Dretch","Succubus","Tanarukk","Chain Devil","Rakshasa"],
+["Ice Mephit","Azer","Salamander","Invisible Stalker","Efreeti"],
+["Pixie","Meenlock","Yeth Hound","Bhuer Hag","Korred"],
+["Dretch","Succubus","Tanarukk","Chain Devil","Rakshasa"],
 ["Half-Ogre","Ettin","Oni","Frost Giant","Storm Giant"],
 ["Goblin", "Lizalfos", "Vampyre", "Merfolk", "Orc"],
 ["Worg","Mimic","Gorgon","Hydra","Kraken"],
 ["Gray Ooze","Gelatinous Cube","Ochre Jelly","Slithering Tracker","Black Pudding"],
-["Gas Spore","Awakened Tree","Shambling Mound","Wood Woad","Treant"],["Skeleton","Warhorse Skeleton","Wight","Wraith","Vampire"]];
+["Gas Spore","Awakened Tree","Shambling Mound","Wood Woad","Treant"],
+["Skeleton","Warhorse Skeleton","Wight","Wraith","Vampire"]];
 
 /* NPC fields */
 var NPCgender = ["male", "female", "agender", "non-binary", "genderfluid"];

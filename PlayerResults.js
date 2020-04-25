@@ -13,29 +13,30 @@
 		["Straight", "Gay", "Bisexual", "Pansexual", "Asexual"],
 		["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"]];
 	
-		var preSet = [[8, 10, 12, 13, 14, 15],[8, 8, 8, 15, 15, 15]];
+		
 	
-		var message = document.querySelector('#sonic');
+		var message = document.getElementById("result");
 	/* message.innerHTML = "Player Generation Complete"; */	
 function generatePlayer() {
 				
 		var stat;
 		var statDef;
-		//var formArr = document.body.querySelector("input#"+i+", select");
+		var formArr = document.body.querySelector("form");
 		//console.log(formArr);
 		for (var i = 1; i < 11; i++)
 		{
 		// getting the inside of each form input
-		
-			stat = document.getElementById(i);
+			
 			if (i < 5)
 			{
-				statDef = stat.defaultValue;
+				stat = formArr.querySelector("input", "#"+i);
 				stat = stat.value;
+				statDef = document.getElementById(i).name;
 			}
 			else
 			{
-				statDef = stat[0].value;
+				stat = formArr.querySelector("select", "#"+i);
+				statDef = stat.name;
 				stat = stat.options[stat.selectedIndex].value;
 			}
 			
@@ -48,18 +49,16 @@ function generatePlayer() {
 			// check for value inputted different the original
 			if (stat === statDef && mainArr[i].length > 1)
 			{
-				var index = randoNum(mainArr[i].length);
+				var index = randoNum(mainArr[i].length - 1);
 				stat = mainArr[i][index];			
 			}
-			else if (mainArr[i].length === 1 && mainArr[i][1] === "TARDIS")
+			else if (mainArr[i].length === 1 && mainArr[i][0] === "TARDIS")
 			{
 				stat = randoNum(500);
 			}
 			
-			// create list node, fill it with the new stat and add it to the ul
-			var node = document.createElement("li");
-			node.innerHTML = statDef + ": " + stat;
-			message.appendChild(node);
+			// find list element
+			document.getElementById(i * 10).innerHTML = statDef + ": " + stat;
 		}
 		
 		var statStack = distribution();
@@ -68,14 +67,13 @@ function generatePlayer() {
 		// add in stats distribution
 		for (var k = 20; k < 26; k++)
 		{
-			node = document.createElement("li");
 			if (document.getElementById(k).value === document.getElementById(k).name)
 			{
-				node.innerHTML = document.getElementById(k).name + ":  " + statStack.pop();
+				document.getElementById(k * 10).innerHTML = document.getElementById(k).name + ":  " + statStack.pop();
 			}
 			else
 			{
-				node.innerHTML = document.getElementById(k).name + ":  " + document.getElementById(k).value;
+				document.getElementById(k * 10).innerHTML = document.getElementById(k).name + ":  " + document.getElementById(k).value;
 			}
 		}
 	}
@@ -101,17 +99,18 @@ function generatePlayer() {
 	
 // distribution of con and such stats
 	function distribution() {
+		var preSet = [[8, 10, 12, 13, 14, 15],[8, 8, 8, 15, 15, 15]];
 		var statRange;
-		var norm = document.getElementsByTagName("input")[4];
-		var pro = document.getElementsByTagName("input")[5];
+		var norm = document.getElementById("normDist");
+		var pro = document.getElementById("minMax");
 		
 		if (pro.checked)
 		{
-			statRange = preSet[pro.value];
+			statRange = preSet[1];
 		}
 		else
 		{
-			statRange = preSet[norm.value];
+			statRange = preSet[0];
 		}
 		
 		return statRange;

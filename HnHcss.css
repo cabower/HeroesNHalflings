@@ -28,7 +28,7 @@ img {max-width: 100% }
 
 .hideAnswer {border: none; width: auto; text-align: center; margin-left: 5%; display: none}
 
-.results {border: none; width: auto; text-align: center; margin-left: 5%}
+ul.results {border: none; width: auto; text-align: center; margin-left: 5%; list-style-type: none}
 
 .resultsLeft {border: none; width: auto; text-align: left; margin-left: 5%}
 
