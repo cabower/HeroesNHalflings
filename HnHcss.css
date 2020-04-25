@@ -2,7 +2,7 @@ body {font-family:elephant; background: rgb(225,210,155) url(hnhBg.png) repeat; 
 
 p {font-size: 20px; padding-left: 50px}
 
-h1 {font-family:algerian; font-size:50px; color:rgb(185, 150, 0); text-align:center; background: black; margin-top: 0px; margin-bottom: 2px}
+h1 {font-family:algerian; font-size:40px; color:rgb(185, 150, 0); text-align:center; background: black; margin-top: 0px; margin-bottom: 2px}
 
 ul {border:2px solid darkred;list-style-type: square; width: 200px; margin-left: 20%}
 
@@ -21,6 +21,8 @@ span {outline-color: darkred; outline-width: medium; outline-style: solid;}
 label {text-align: center; font-size: 20px}
 
 img {max-width: 100% }
+
+.rolldie {font-size: 30px; color: black; text-align: center}
 
 .story {margin-left: 10%; margin-right: 20%; text-align: center}
 
@@ -49,6 +51,11 @@ img {max-width: 100% }
 
 .die {
     padding-left: 25%;
+    justify-content: center;
+}
+.die2 {
+    padding-left: 25%;
+    justify-content: center;
 }
 
 a:link#easterEgg  {

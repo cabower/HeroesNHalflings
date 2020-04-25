@@ -145,7 +145,7 @@ function generateWorld() {
 }
 
 /* Diety Generator */
-function generateDiety() {
+function generateDeity() {
 	var message = "";
 	var rando = randoNum(religion.length);
 	
@@ -157,7 +157,7 @@ function generateDiety() {
 	rando = randoNum(divineRank.length);
 	message += "Divine Rank: " + divineRank[rando];
 	
-	document.getElementById("diety").innerHTML = message;
+	document.getElementById("deity").innerHTML = message;
 }
 
 

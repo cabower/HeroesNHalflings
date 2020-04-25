@@ -8,7 +8,7 @@
     </head>
 <body>
 
-<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="250" width="550">
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header" height="150px" width="350px">
 <h1>Dice Roller Simulator</h1>
     
     
@@ -16,17 +16,18 @@
 <button><a href="HnH.html"> Main Page</a></button><button><a href="PlayerPg.html"> Players</a></button><button><a href="GM.html"> Game Masters </a><button><a href="DiceRoller.html">Dice Roller</a></button><button><a href="AboutUs.html"> About Us </a></button></button></span>
 
 <br>
-	<p> What sided die do you want to role?</p>
+	<p> What sided die do you want to <a id="easterEgg2" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">roll?</a></p>
 <div class="die">
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,4)">Roll a D4</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,6)">Roll a D6</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,8)">Roll a D8</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,10)">Roll a D10</button>
-	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
+    <button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,20)">Roll a D20</button>
 </div>
-<p id="roll"></p>
-
+    
+<p class="rolldie" id="roll"></p>
+    
 <script>
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * max) + min;
