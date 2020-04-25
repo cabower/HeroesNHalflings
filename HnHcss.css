@@ -22,6 +22,10 @@ label {text-align: center; font-size: 20px}
 
 img {max-width: 100% }
 
+
+
+
+
 .rolldie {font-size: 30px; color: black; text-align: center}
 
 .story {margin-left: 10%; margin-right: 20%; text-align: center}
@@ -29,6 +33,12 @@ img {max-width: 100% }
 .hideAnswer {border: none; width: auto; text-align: center; margin-left: 5%; display: none}
 
 ul.results {border: none; width: auto; text-align: center; margin-left: 5%; list-style-type: none}
+
+.playerResults {border: none; width: auto; text-align: left; margin-left: 30%; list-style-type: none; }
+
+.statResults {border: none; width: auto; text-align: left; margin-left: 25%; margin-top: 20px; list-style-type: none}
+
+.results {border: none; width: auto; text-align: center; margin-left: 5%; list-style-type: none}
 
 .resultsLeft {border: none; width: auto; text-align: left; margin-left: 5%}
 

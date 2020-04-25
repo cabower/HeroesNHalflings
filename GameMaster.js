@@ -1,13 +1,13 @@
 /* GameMaster.js */
 
 /* event location */
-var eventLocation = ["Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hill", "Mountain" "Swamp", 
+var eventLocation = ["Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hill", "Mountain", "Swamp", 
 "Underdark", "Underwater", "Urban", "Inside a Building", " Ruins", "Cliff Face", "Feywild", "Shadowfell", 
 "Several Connected Mesas", "Glacier", "Back of a Gargantuan Creature"];
 
 /* encounter arrays */
-var encounterType = [ "Festival", "Arrival of an Important NPC", "concecration of a temple", "Procession of ghosts", "planar conjunction", "Arena Event", "Trial", "Start of a War", "Start of a skirmish", "combat", "Dungeon"];
-var possibleLoot = ["Gold", "Potion", "poison", "Gem", "Art Object", "Trinket", "Armor", "Weapon"]; 
+var encounterType = [ "Festival", "Arrival of an Important NPC", "Consecration of a temple", "Procession of ghosts", "Planar conjunction", "Arena Event", "Trial", "Start of a War", "Start of a skirmish", "Combat", "Dungeon"];
+var possibleLoot = ["Gold", "Potion", "Poison", "Gem", "Art Object", "Trinket", "Armor", "Weapon"]; 
 var lootState = ["Magic ", "Cursed", " "];
 
 
@@ -15,7 +15,7 @@ var lootState = ["Magic ", "Cursed", " "];
 var government = ["Autocracy", "Bureaucracy", "Confederacy", "Democracy", "Dictatorship", "Feudalism","Gerontocracy", "Hierarchy", "Magocracy", "Matriarchy", "Militocracy", "Monarchy", "Oligarchy", "Patriarchy", "Meritocracy", "Plutocracy", "Republic", "Satrapy", "Kleptocracy", "Theocracy"];
 
 /*settlement types */
-var settlement = [["Village",[1000, 1, 0, "small", 2]], ["Town",[6000, 2, 1000, "medium", 20]], ["City",[25000, 25, 5000, "large", 500]]];
+var settlement = [["Village",[1000, 1, 0, "Small", 2]], ["Town",[6000, 2, 1000, "Medium", 20]], ["City",[25000, 25, 5000, "Large", 500]]];
 
 /* compass direction */
 var compass = ["North", "North East", "East", "South East", "South", "South West", "West", "North West"];
@@ -80,7 +80,7 @@ function generateMonster() {
 
 /* Event generator */
 function generateEvent() {
-	var noncombat, omen, merchant, eventNum, allEvents;
+	var loot, encounter, noncombat, omen, merchant, eventNum, allEvents;
     
     noncombat = "Non-combat: ";
     omen = "Omen: ";
@@ -133,7 +133,11 @@ function generateEvent() {
         merchant += "Error 404";
     }
     
-    allEvents = noncombat + "<br><br>" + omen + "<br><br>" + merchant;
+    encounter = "Encounter: " + encounterType[randoNum(11)];
+    
+    loot = "Possible Loot: " + lootState[randoNum(3)] + " " + possibleLoot[randoNum(8)];
+    
+    allEvents = noncombat + "<br><br>" + omen + "<br><br>" + merchant + "<br><br>" + encounter + "<br><br>" + loot;
     
     document.querySelector("#event").innerHTML = allEvents;
 }
