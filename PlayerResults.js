@@ -15,38 +15,44 @@
 	
 		
 	
-		var message = document.getElementById("result");
+		var message = document.querySelector("#result");
 	/* message.innerHTML = "Player Generation Complete"; */	
+
 function generatePlayer() {
 				
 		var stat;
 		var statDef;
-		var formArr = document.body.querySelector("form");
+		var formArr = document.querySelector("form");
 		//console.log(formArr);
 		for (var i = 1; i < 11; i++)
 		{
 		// getting the inside of each form input
-			
-			if (i < 5)
+            if(i === 1){
+                stat = document.getElementById("1").value;
+                statDef = document.getElementById("1").name;
+            } else if (i < 6)
 			{
-				stat = formArr.querySelector("input", "#"+i);
+				stat = document.getElementById(i);
 				stat = stat.value;
 				statDef = document.getElementById(i).name;
 			}
 			else
 			{
-				stat = formArr.querySelector("select", "#"+i);
-				statDef = stat.name;
-				stat = stat.options[stat.selectedIndex].value;
+				stat = document.getElementById(i);
+                stat = stat.value;
+				statDef = document.getElementById(i).name;
+				
 			}
+        
 			
 			//test 
-			console.log(mainArr);
-			console.log(i);
-			console.log(stat);
-			console.log(statDef);
+			//console.log(mainArr);
+			//console.log(i);
+			//console.log(stat);
+			//console.log(statDef);
 			
 			// check for value inputted different the original
+            
 			if (stat === statDef && mainArr[i].length > 1)
 			{
 				var index = randoNum(mainArr[i].length - 1);

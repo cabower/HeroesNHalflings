@@ -8,7 +8,9 @@
     </head>
 <body>
 
-<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="250" width="550">
+
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="150px" width="350px">
+
 <h1>Player Generator</h1>
     
     
@@ -103,14 +105,68 @@
     <br>
 
 	<!--put back value off click-->
-	<input style="margin-left: 20px; margin-right: auto" type="intNumber" id="20" min="8" max="15" size="12" value="Con" name ="Con" onfocus="this.value=='Cons'? this.value='': this.value = this.value;">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="21" min="8" max="15" size="12" value="Str" name="Str" onfocus="this.value=='Str'? this.value='': this.value = this.value;">
+
+	<input style="margin-left: 20px; margin-right: auto" type="intNumber" id="20" min="8" max="15" size="12" value="Con" name = "Con" 
+	onfocus="this.value=='Con'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Con' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="21" min="8" max="15" size="12" value="Str" name="Str" 
+	onfocus="this.value=='Str'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Str' : this.value = this.value">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="22" min="8" max="15" size="12" value="Int" name="Int" onfocus="this.value=='Int'? this.value='': this.value = this.value;">
-    <input style="margin-left: 20px; margin-right: auto"  type="intNumber" id="23" min="8" max="15" size="12" value="Char" name="Char" onfocus="this.value=='Char'? this.value='': this.value = this.value;">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="22" min="8" max="15" size="12" value="Int" name="Int" 
+	onfocus="this.value=='Int'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Int' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto"  type="intNumber" id="23" min="8" max="15" size="12" value="Char" name="Char" 
+	onfocus="this.value=='Char'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Char' : this.value = this.value">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" onfocus="this.value=='Dex'? this.value='': this.value = this.value;">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" onfocus="this.value=='Wis'? this.value='': this.value = this.value;">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" 
+	onfocus="this.value=='Dex'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Dex' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" 
+	onfocus="this.value=='Wis'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Wis' : this.value = this.value">
+
+    
+	<input style="margin-left: 50%; margin-top: 10px" type="button" value="Generate Character" onclick="generatePlayer()">
+
+
+<ul id="result" class="playerResults">
+	<li id="10"></li>
+	<li id="20"></li>
+	<li id="30"></li>
+	<li id="40"></li>
+	<li id="50"></li>
+	<li id="60"></li>
+	<li id="70"></li>
+	<li id="80"></li>
+	<li id="90"></li>
+	<li id="100"></li>
+</ul>
+<ul id="statResults" class="statResults">
+	<li id="200"></li>
+	<li id="210"></li>
+	<li id="220"></li>
+<div style="margin-left: 40%; margin-top: -80px">
+	<li id="230"></li>
+	<li id="240"></li>
+	<li id="250"></li>
+</div>
+</ul>
+
+
+    <p style="margin-left: -120px; margin-bottom: 10px; margin-top: 15%">Backstory values:</p>
+    <input type="text" id="landfeat" value="Land Feature (Forest)" onfocus="if (this.value=='Land Feature (Forest)') this.value='';" onblur="this.value==''? this.value='Land Feature (Forest)' : this.value = this.value">
+    <input type="text" id="country" value="Country Name" onfocus="if (this.value=='Country Name') this.value='';" onblur="if (this.value=='') this.value='Country Name';" onblur="this.value==''? this.value='Country Name' : this.value = this.value">
+    <br>
+    <select id="lifestyle" name="Lifestyle">
+		<option value="placeholder" selected>Lifestyle</option>
+        <option value="criminal">Criminal</option>
+        <option value="soldier">Soldier</option>
+        <option value="noble">Noble</option>
+    </select>
+    <select id="type" name="Type">
+		<option value="placeholder" selected>Type</option>
+        <option value="tragic">Tragic</option>
+        <option value="heroic">Heroic</option>
+        <option value="comedic">Comedic</option>
+    </select>
+    
+<!-- >>>>>>> 48ef40311b0ef7b63450053c6832ae449225fd9c -->
 <br>
 <br>
     <input style="margin-left: 420px" type="button" value="Generate" onClick="generatePlayer()">
