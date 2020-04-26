@@ -18,15 +18,15 @@
 <form method="get">
 <p style="margin-left: -120px; margin-bottom: 10px;">Input values:</p>
 <!-------Use onfocus="if (this.value=='Name') this.value='';" to clear value------->
-    <input type="text" id="1" name="Name" value="Name" onfocus="this.value=='Name'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Name' : this.value = this.value">
+    <input type="text" name="Name" value="Name" onfocus="this.value=='Name'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Name' : this.value = this.value">
     
-    <input type="intNumber" id="2" min="1" max="500" size="5" name="Age" value="Age" onfocus="this.value=='Age'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Age' : this.value = this.value">
+    <input type="intNumber" min="1" max="500" size="5" name="Age" value="Age" onfocus="this.value=='Age'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Age' : this.value = this.value">
     
-    <input type="intNumber" id="3" min="1" max="500" size="6" name="Height" value="Height" onfocus="this.value=='Height'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Height' : this.value = this.value">
+    <input type="intNumber" min="1" max="500" size="6" name="Height" value="Height" onfocus="this.value=='Height'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Height' : this.value = this.value">
 <br>
-    <input type="intNumber" id="4" min="1" max="500" size="6" name="Weight" value="Weight" onfocus="this.value=='Weight'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Weight' : this.value = this.value">  
+    <input type="intNumber" min="1" max="500" size="6" name="Weight" value="Weight" onfocus="this.value=='Weight'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Weight' : this.value = this.value">  
     
-	<select id="5" name="Size">
+	<select name="Size">
 		<option value="Size" defaultValue="Size">Size</option>
         <option value="Extra Small">Extra Small</option>
         <option value="Small">Small</option>
@@ -35,7 +35,7 @@
         <option value="Extra Large">Extra Large</option>
     </select>
     
-	<select id="6" name="Gender">
+	<select name="Gender">
 		<option value="Gender" selected>Gender</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
@@ -43,7 +43,7 @@
     </select>
 <!------------Make dropdown appear when Other is selected-------->    
 <br>
-    <select id="7" name="Race">
+    <select name="Race">
 		<option value="Race" selected>Race</option>
         <option value="Dragonborn">Dragonborn</option>
         <option value="Dwarf">Dwarf</option>
@@ -57,7 +57,7 @@
 		<!-- <option value="brewRace">Home Brew</option> -->
     </select>
     
-	<select id="8" name="Class">
+	<select name="Class">
 		<option value="Class" selected>Class</option>
         <option value="Barbarian">Barbarian</option>
         <option value="Bard">Bard</option>
@@ -74,7 +74,7 @@
 		<!-- <option value="brewClass">Home Brew</option> -->
     </select>
     
-	<select id="9" name="Sexual Orientation">
+	<select name="Sexual Orientation">
 		<option value="Sexual Orientation" selected>Sexual Orientation</option>
         <option value="Straight">Straight</option>
         <option value="Gay">Gay</option>
@@ -83,7 +83,7 @@
         <option value="Asexual">Asexual</option>   
     </select>
 	
-	<select id="10" name="Alignment">
+	<select name="Alignment">
 		<option value="Alignment" selected>Alignment</option>
 	    <option value="Lawful Good">Lawful Good</option>
         <option value="Neutral Good">Neutral Good</option>
@@ -127,18 +127,18 @@
 
 
 <ul id="result" class="results">
+	<li id="1"></li>
+	<li id="2"></li>
+	<li id="3"></li>
+	<li id="4"></li>
+	<li id="5"></li>
+	<li id="6"></li>
+	<li id="7"></li>
+	<li id="8"></li>
+	<li id="9"></li>
 	<li id="10"></li>
-	<li id="20"></li>
-	<li id="30"></li>
-	<li id="40"></li>
-	<li id="50"></li>
-	<li id="60"></li>
-	<li id="70"></li>
-	<li id="80"></li>
-	<li id="90"></li>
-	<li id="100"></li>
 </ul "results">
-<ul id="statResults">
+<ul id="statResults" class="results">
 	<li id="200"></li>
 	<li id="210"></li>
 	<li id="220"></li>
@@ -154,7 +154,7 @@
     <br>
     <select id="lifestyle" name="Lifestyle">
 		<option value="placeholder" selected>Lifestyle</option>
-        <option value="criminal">Criminal</option>
+        <option value="criminal">Criminal</option>   
         <option value="soldier">Soldier</option>
         <option value="noble">Noble</option>
     </select>

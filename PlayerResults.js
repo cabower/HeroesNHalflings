@@ -17,26 +17,58 @@
 	
 		var message = document.getElementById("result");
 	/* message.innerHTML = "Player Generation Complete"; */	
-function generatePlayer() {
-				
-		var stat;
+function generatePlayer() 
+{
+	var formArr = ["","Name", "Age", "Height", "Weight", "Size", "Gender", "Race", "Class", "Sexual Orientation", "Alignment"];
+	var stat;
+	var statDef;
+	var k;
+	
+	for (var i = 1; i < formArr.length; i++)
+	{
+		stat = document.getElementsByName(formArr[i]);
+		statDef = formArr[i];
+		//k = i * 10;
+		if (i < 5)
+		{
+			stat = stat.value;
+		}
+		else
+		{
+			stat = stat.options[stat.selectedIndex].value;
+		}
+		
+		// check for value inputted different the original
+			if (stat === statDef && mainArr[i].length > 1)
+			{
+				var index = randoNum(mainArr[i].length - 1);
+				stat = mainArr[i][index];			
+			}
+			else if (mainArr[i].length === 1 && mainArr[i][0] === "TARDIS")
+			{
+				stat = randoNum(500);
+			}
+			
+			// find list element
+			document.getElementById(i).innerHTML = statDef + ": " + stat;
+			console.log(i);
+			console.log(stat);
+			console.log(statDef);
+	}
+	
+/* 		var stat;
 		var statDef;
-		var formArr = document.body.querySelector("form");
-		//console.log(formArr);
 		for (var i = 1; i < 11; i++)
 		{
 		// getting the inside of each form input
-			
+			stat = document.getElementByName(i);
+			statDef = stat.name;
 			if (i < 5)
 			{
-				stat = formArr.querySelector("input", "#"+i);
 				stat = stat.value;
-				statDef = document.getElementById(i).name;
 			}
 			else
 			{
-				stat = formArr.querySelector("select", "#"+i);
-				statDef = stat.name;
 				stat = stat.options[stat.selectedIndex].value;
 			}
 			
@@ -59,7 +91,7 @@ function generatePlayer() {
 			
 			// find list element
 			document.getElementById(i * 10).innerHTML = statDef + ": " + stat;
-		}
+		} */
 		
 		var statStack = distribution();
 		shuffle(statStack);
@@ -119,7 +151,7 @@ function generatePlayer() {
 	// random number generator;
 	function randoNum(end) {
 		var result = Math.floor((Math.random() * end) + 1);
-		console.log(result);
+		console.log("rando: " + result);
 		return result;
 	}
 	
