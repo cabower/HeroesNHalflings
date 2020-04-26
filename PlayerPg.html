@@ -105,20 +105,14 @@
 
 	<!--put back value off click-->
 
-	<input style="margin-left: 20px; margin-right: auto" type="intNumber" id="20" min="8" max="15" size="12" value="Con" name = "Con" 
-	onfocus="this.value=='Con'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Con' : this.value = this.value">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="21" min="8" max="15" size="12" value="Str" name="Str" 
-	onfocus="this.value=='Str'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Str' : this.value = this.value">
+	<input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="20" min="8" max="15" placeholder="Constitution" name="Cons">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="21" min="8" max="15" placeholder="Strength" name="Str">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="22" min="8" max="15" size="12" value="Int" name="Int" 
-	onfocus="this.value=='Int'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Int' : this.value = this.value">
-    <input style="margin-left: 20px; margin-right: auto"  type="intNumber" id="23" min="8" max="15" size="12" value="Char" name="Char" 
-	onfocus="this.value=='Char'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Char' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="22" min="8" max="15" placeholder="Intelligence" name="Int">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px"  type="number" id="23" min="8" max="15" placeholder="Charisma" name="Char">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" 
-	onfocus="this.value=='Dex'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Dex' : this.value = this.value">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" 
-	onfocus="this.value=='Wis'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Wis' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="24" min="8" max="15" placeholder="Dexterity" name="Dex">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="25" min="8" max="15" size="12" placeholder="Wisdom" name="Wis">
 
     
 	<input style="margin-left: 50%; margin-top: 10px" type="button" value="Generate Character" onclick="generatePlayer()">

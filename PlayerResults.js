@@ -94,8 +94,8 @@ function generatePlayer() {
 		{
 			node = document.createElement("li");
 			stat = document.getElementById(k).value;
-			statDef = document.getElementById(k).defaultValue;
-			if (stat === statDef)
+			statDef = document.getElementById(k).name;
+			if (stat === "")
 			{
 				node.innerHTML = statDef + ": " + statStack.pop();
 			}
