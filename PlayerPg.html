@@ -7,35 +7,33 @@
     </head>
 <body>
 
-<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="200px" width="450px">
+
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="150px" width="350px">
+
 <h1>Player Generator</h1>
-<!---Note! use onblur for all text fields--->    
+    
     
 <span style="outline-color: darkred; outline-width: medium; outline-style: solid">
 <button><a href="HnH.html">Main Page</a></button><button><a href="PlayerPg.html">Players</a></button><button><a href="GM.html">Game Masters </a></button><button><a href="DiceRoller.html">Dice Roller</a></button><button><a href="AboutUs.html">About Us </a></button></span>
 
 
 <form method="get">
-<p style="margin-left: -120px; margin-bottom: 10px;">Input values:</p>
+<p style="margin-left: -200px; margin-bottom: 10px;">Input values:</p>
 <!-------Use onfocus="if (this.value=='Name') this.value='';" to clear value------->
-    <input type="text" name="Name" value="Name" onfocus="this.value=='Name'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Name' : this.value = this.value">
+    <input type="text" id="1" value="Name" onfocus="getElementById('1').value = '';" onBlur="getElementById('1').value === ''? getElementById('1').value = 'Name': getElementById('1').value;">
     
-    <input type="intNumber" min="1" max="500" size="5" name="Age" value="Age" onfocus="this.value=='Age'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Age' : this.value = this.value">
+    <input type="intNumber" id="2" min="1" max="99999" size="5" value="Age" onClick="getElementById('2').value = '';" onBlur="getElementById('2').value === ''? getElementById('2').value = 'Age': getElementById('2').value;">
     
-    <input type="intNumber" min="1" max="500" size="6" name="Height" value="Height" onfocus="this.value=='Height'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Height' : this.value = this.value">
+    <input type="floatNumber" id="3" min="1.0" max="9999.99" size="6" value="Height" onClick="getElementById('3').value = '';" onBlur="getElementById('3').value === ''? getElementById('3').value = 'Height': getElementById('3').value;">
 <br>
-    <input type="intNumber" min="1" max="500" size="6" name="Weight" value="Weight" onfocus="this.value=='Weight'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Weight' : this.value = this.value">  
-    
-	<select name="Size">
-		<option value="Size" defaultValue="Size">Size</option>
-        <option value="Extra Small">Extra Small</option>
+    <input type="intNumber" id="4" min="1" max="9000" size="6" value="Weight" onClick="getElementById('4').value = '';" onBlur="getElementById('4').value === ''? getElementById('4').value = 'Weight': getElementById('4').value;">  
+    <select id="5" name="Size">
+		<option value="Size" selected>Size</option>
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>
         <option value="Large">Large</option>
-        <option value="Extra Large">Extra Large</option>
     </select>
-    
-	<select name="Gender">
+    <select id="6" name="Gender">
 		<option value="Gender" selected>Gender</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
@@ -43,7 +41,7 @@
     </select>
 <!------------Make dropdown appear when Other is selected-------->    
 <br>
-    <select name="Race">
+    <select id="7" name="Race">
 		<option value="Race" selected>Race</option>
         <option value="Dragonborn">Dragonborn</option>
         <option value="Dwarf">Dwarf</option>
@@ -56,8 +54,7 @@
         <option value="Tiefling">Tiefling</option>
 		<!-- <option value="brewRace">Home Brew</option> -->
     </select>
-    
-	<select name="Class">
+    <select id="8" name="Class">
 		<option value="Class" selected>Class</option>
         <option value="Barbarian">Barbarian</option>
         <option value="Bard">Bard</option>
@@ -73,17 +70,16 @@
         <option value="Wizard">Wizard</option>
 		<!-- <option value="brewClass">Home Brew</option> -->
     </select>
-    
-	<select name="Sexual Orientation">
+    <select id="9" name="Sexual Orientation">
 		<option value="Sexual Orientation" selected>Sexual Orientation</option>
         <option value="Straight">Straight</option>
         <option value="Gay">Gay</option>
         <option value="Bisexual">Bisexual</option>
         <option value="Pansexual">Pansexual</option>
-        <option value="Asexual">Asexual</option>   
+        <option value="Asexual">Asexual</option>
+        
     </select>
-	
-	<select name="Alignment">
+	<select id="10" name="Alignment">
 		<option value="Alignment" selected>Alignment</option>
 	    <option value="Lawful Good">Lawful Good</option>
         <option value="Neutral Good">Neutral Good</option>
@@ -97,64 +93,36 @@
     </select>
 
 <!------------Make dropdown appear when Other is selected-------->    
-<p style="margin-left: -120px; margin-bottom: 10px;">Player Stats:</p>
+<p style="margin-left: -200px; margin-bottom: 10px;">Player Stats:</p>
 	<!-- push left -->
-	<input style="margin-left: 0%; margin-right: auto" type="radio" id="normDist" name="stats" value="false">
+	<input style="margin-left: -50px; margin-right: auto" type="radio" id="normDist" name="stats" value="0">
 	<label style="margin-left: auto; margin-right: auto" for="normDist">Normal Distribution</label>
-	<input style="margin-left: auto; margin-right: auto"  type="radio" id="minMax" name="stats" value="false">
+	<input style="margin-left: auto; margin-right: auto"  type="radio" id="minMax" name="stats" value="1">
 	<label style="margin-left: auto; margin-right: auto" for="minMax">Min/Max</label>
     <br>
 
 	<!--put back value off click-->
-	<input style="margin-left: 20px; margin-right: auto" type="intNumber" id="20" min="8" max="15" size="12" value="Con" name = "Con" 
-	onfocus="this.value=='Con'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Con' : this.value = this.value">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="21" min="8" max="15" size="12" value="Str" name="Str" 
-	onfocus="this.value=='Str'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Str' : this.value = this.value">
+
+	<input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="20" min="8" max="15" placeholder="Constitution" name="Cons">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="21" min="8" max="15" placeholder="Strength" name="Str">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="22" min="8" max="15" size="12" value="Int" name="Int" 
-	onfocus="this.value=='Int'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Int' : this.value = this.value">
-    <input style="margin-left: 20px; margin-right: auto"  type="intNumber" id="23" min="8" max="15" size="12" value="Char" name="Char" 
-	onfocus="this.value=='Char'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Char' : this.value = this.value">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="22" min="8" max="15" placeholder="Intelligence" name="Int">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px"  type="number" id="23" min="8" max="15" placeholder="Charisma" name="Char">
 <br>
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="24" min="8" max="15" size="12" value="Dex" name="Dex" 
-	onfocus="this.value=='Dex'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Dex' : this.value = this.value">
-    <input style="margin-left: 20px; margin-right: auto" type="intNumber" id="25" min="8" max="15" size="12" value="Wis" name="Wis" 
-	onfocus="this.value=='Wis'? this.value='': this.value = this.value;" onblur="this.value==''? this.value='Wis' : this.value = this.value">
-	
-	<input style="margin-left: 50%" type="button" value="Generate Character" onclick="generatePlayer()">
-<br>
-<br>
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="24" min="8" max="15" placeholder="Dexterity" name="Dex">
+    <input style="margin-left: 20px; margin-right: auto; width: 150px" type="number" id="25" min="8" max="15" size="12" placeholder="Wisdom" name="Wis">
+
+    
+	<input style="margin-left: 50%; margin-top: 10px" type="button" value="Generate Character" onclick="generatePlayer()">
 
 
-<ul id="result" class="results">
-	<li id="1"></li>
-	<li id="2"></li>
-	<li id="3"></li>
-	<li id="4"></li>
-	<li id="5"></li>
-	<li id="6"></li>
-	<li id="7"></li>
-	<li id="8"></li>
-	<li id="9"></li>
-	<li id="10"></li>
-</ul "results">
-<ul id="statResults" class="results">
-	<li id="200"></li>
-	<li id="210"></li>
-	<li id="220"></li>
-	<li id="230"></li>
-	<li id="240"></li>
-	<li id="250"></li>
-</ul>
-
-
-    <p style="margin-left: -120px; margin-bottom: 10px;">Backstory values:</p>
+    <p style="margin-left: -200px; margin-bottom: 10px; margin-top: 15%">Backstory values:</p>
     <input type="text" id="landfeat" value="Land Feature (Forest)" onfocus="if (this.value=='Land Feature (Forest)') this.value='';" onblur="this.value==''? this.value='Land Feature (Forest)' : this.value = this.value">
     <input type="text" id="country" value="Country Name" onfocus="if (this.value=='Country Name') this.value='';" onblur="if (this.value=='') this.value='Country Name';" onblur="this.value==''? this.value='Country Name' : this.value = this.value">
     <br>
     <select id="lifestyle" name="Lifestyle">
 		<option value="placeholder" selected>Lifestyle</option>
-        <option value="criminal">Criminal</option>   
+        <option value="criminal">Criminal</option>
         <option value="soldier">Soldier</option>
         <option value="noble">Noble</option>
     </select>
@@ -165,24 +133,21 @@
         <option value="comedic">Comedic</option>
     </select>
     
+<!-- >>>>>>> 48ef40311b0ef7b63450053c6832ae449225fd9c -->
 <br>
 <br>
-    <input style="margin-left: 50%" type="button" onclick="generateBackstory()" value="Generate Backstory">
+    <input style="margin-left: 50%" type="button" value="Generate Backstory" onclick="generateBackstory()">
 </form>  
-
+<!-- Outputs from above will be assembled and printed as a character sheet below -->
 <br>
+<p id="result"></p>
+<ul id="sonic" class="playerResults"></ul>
 <br>
 <p id="genBackstory" class="story"></p>
-    
-
 <script src="PlayerResults.js"></script>
 
-<!-- Outputs from above will be assembled and printed as a character sheet below -->
     
 <div class="footer">
     <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div> 
-
-
-
 </body>
 </html>
