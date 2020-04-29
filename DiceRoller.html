@@ -8,7 +8,7 @@
     </head>
 <body>
 
-<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header" height="150px" width="350px">
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="250" width="550">
 <h1>Dice Roller Simulator</h1>
     
     
@@ -22,22 +22,99 @@
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,6)">Roll a D6</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,8)">Roll a D8</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,10)">Roll a D10</button>
-    <button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,20)">Roll a D20</button>
+</div> `  
+<div style="padding-left: 10%;">
+    <label for="randomDie" id="inputLabel">
+          A custom die:
+    </label>
+    <input type="text" id="inputNumber" />
+    <button type="button" id="RandomButton">Submit</button>
+    <button type="button" id="clearInput">Clear</button>
+</div>    
+
+<p style="padding-left: 50%;" id="roll"></p>
+    
+<img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6; padding-left: 40%">
+    
+<div style="padding-left: 10%;">
+    <label for="timerTitle" id="timeLabel">
+          Set a timer:
+    </label>
+    <p>Minutes
+        <input type="text" id="amountMin" /> </p>
+    <p>Seconds
+        <input type="text" id="amountSec" /> </p>
+    <button type="button" id="startTimer">Start Timer</button>
+    <button onclick="clearInterval(myVar)">Stop time</button>
 </div>
-    
-<p class="rolldie" id="roll"></p>
-    
+<p id="timer"></p>
+
 <script>
+    var timeStart = false;
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
+function getUserInput() {
+    var perfectNumber; 
+    perfectNumber = document.getElementById("inputNumber").value;
+    perfectNumber = parseInt(perfectNumber);
+    document.getElementById("roll").innerHTML = getRndInteger(1, perfectNumber);
+}
+function clearInput() {
+    document.getElementById("inputNumber").value = "";
+    document.getElementById("roll").innerHTML = " ";
+}
+function timer() {
+    var min = document.getElementById("amountMin").value;
+    var sec = document.getElementById("amountSec").value;
+    var myVar = setInterval(function(){ myTimer(min, sec); }, 1000);
+}
+function myTimer(min, sec) {
+    var timeString;
+    //var timerSec = sec;
+    //var timerMin = min;
+    sec--;
+    if (sec < 0) {
+        min--;
+        sec = 59;
+    }
+    timeString = "Time left: " + min + " mintues and " + sec + " seconds.";
+    if (min < 0){
+        timeString = "Ran out of Time...";
+        alert("Out of time");
+        clearInterval(myVar);
+    }
+    else{
+        var myVar = setInterval(function(){ myTimer(min, sec); }, 1000);
+    }
+    document.getElementById("timer").innerHTML = timeString;
+}
+    
+var submitButton = document.getElementById("RandomButton");
+if (submitButton.addEventListener) {
+    submitButton.addEventListener("click", getUserInput, false);
+}
+else if (submitButton.attachEvent) {
+	submitButton.attachEvent("onclick",getUserInput);
+}
+    
+    var clearButton = document.getElementById("clearInput");
+if (clearButton.addEventListener) {
+    clearButton.addEventListener("click", clearInput, false);
+}
+else if (clearButton.attachEvent) {
+	clearButton.attachEvent("onclick", clearInput);
+}
+    var timerButton = document.getElementById("startTimer");
+if (timerButton.addEventListener) {
+    timerButton.addEventListener("click", timer, false);
+}
+else if (timerButton.attachEvent) {
+	timerButton.attachEvent("onclick", timer);
+}
 </script>
-
-
-
-
-<img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6; padding-left: 40%">
     
 <div class="footer">
     <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div>      
