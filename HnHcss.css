@@ -34,7 +34,8 @@ img {max-width: 100% }
 
 ul.results {border: none; width: auto; text-align: center; margin-left: 5%; list-style-type: none}
 
-.playerResults {border: none; width: auto; text-align: left; margin-left: 30%; list-style-type: none; }
+.playerResults {border: none; width: auto; text-align: left; margin-left: 
+    40%; list-style-type: none; }
 
 .statResults {border: none; width: auto; text-align: left; margin-left: 25%; margin-top: 20px; list-style-type: none}
 

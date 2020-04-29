@@ -8,7 +8,7 @@
     </head>
 <body>
 
-<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header" height="150px" width="350px">
+<img src="hnhLogo2.png" alt="Heroes and Halflings" class="header"  height="250" width="550">
 <h1>Dice Roller Simulator</h1>
     
     
@@ -22,22 +22,52 @@
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,6)">Roll a D6</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,8)">Roll a D8</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,10)">Roll a D10</button>
-    <button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
+	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,12)">Roll a D12</button>
 	<button onclick="document.getElementById('roll').innerHTML = getRndInteger(1,20)">Roll a D20</button>
-</div>
+</div> `  
+<div style="padding-left: 10%;">
+    <label for="randomDie" id="inputLabel">
+          A custom die:
+    </label>
+    <input type="text" id="inputNumber" />
+    <button type="button" id="RandomButton">Submit</button>
+    <button type="button" id="clearInput">Clear</button>
+</div>    
+
+<p style="padding-left: 50%;" id="roll"></p>
     
-<p class="rolldie" id="roll"></p>
+<img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6; padding-left: 40%">
     
 <script>
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
+function getUserInput() {
+    var perfectNumber; 
+    perfectNumber = document.getElementById("inputNumber").value;
+    perfectNumber = parseInt(perfectNumber);
+    document.getElementById("roll").innerHTML = getRndInteger(1, perfectNumber);
+}
+function clearInput() {
+    document.getElementById("inputNumber").value = "";
+    document.getElementById("roll").innerHTML = " ";
+}
+var submitButton = document.getElementById("RandomButton");
+if (submitButton.addEventListener) {
+    submitButton.addEventListener("click", getUserInput, false);
+}
+else if (submitButton.attachEvent) {
+	submitButton.attachEvent("onclick",getUserInput);
+}
+    
+    var clearButton = document.getElementById("clearInput");
+if (clearButton.addEventListener) {
+    clearButton.addEventListener("click", clearInput, false);
+}
+else if (clearButton.attachEvent) {
+	clearButton.attachEvent("onclick", clearInput);
+}
 </script>
-
-
-
-
-<img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6; padding-left: 40%">
     
 <div class="footer">
     <p style="font-size: 12px">2020 Class Project for TLU's Web Programming and Applications course.  <a id="easterEgg" target="_blank" href="https://www.youtube.com/watch?v=BBGEG21CGo0">Intellectual</a>  property of Caroline Bower, Rachel Shelton, and Trey Jones.</p></div>      
