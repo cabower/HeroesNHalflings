@@ -20,6 +20,8 @@ var settlement = [["Village",[1000, 1, 0, "Small", 2]], ["Town",[6000, 2, 1000, 
 /* compass direction */
 var compass = ["North", "North East", "East", "South East", "South", "South West", "West", "North West"];
 
+var landfeat = ["Forest", "Mountains", "Fields", "Desert", "Marshes", "Swamp", "Valley", "Plateu", "Hills", "River", "Quarry", "Countryside", "Shores", "Isles"];
+
 /* deity generator helper arrays */
 var religion = ["Monotheism", "Dualism", "Animism"];
 var aRow = ["Lawful ", "Neutral ", "Chaotic "];
@@ -161,7 +163,16 @@ function generateNPC() {
 
 /* World Generator */
 function generateWorld() {
+	var land, dir, world, duck
+	duck = randoNum(landfeat.length);
+	land = landfeat[duck];
 	
+	duck = randoNum(compass.length);
+	dir = compass[duck];
+	
+	world = "Location: The " + dir + "ern " + land;
+	
+	document.querySelector("#world").innerHTML = world;
 }
 
 /* Diety Generator */
