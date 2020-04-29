@@ -149,7 +149,6 @@ function generatePlayer() {
 	// random number generator;
 	function randoNum(end) {
 		var result = Math.floor((Math.random() * end) + 1);
-		console.log("randoNum; " + result);
 		return result;
 	}
 	
@@ -254,7 +253,7 @@ function generateBackstory() {
        } else if (type === "heroic" && lifestyle === "criminal") {
            backstory += " had many dreams and ambitions, but saving a group of children from slavery hadn't been on " + belongPro + " list.  Even so, when " + pronoun + " stumbled across a cage full of dirty, piteous children in a corrupt merchant's cellar, " + pronoun + " did not hesitate picking the lock. <br><br> " + name + " managed to spirit them away to safety in the " + landfeat + "s of " + country + ". From that day, " + name + " vowed to thwart the plans and business of all whom " + pronoun + " deemed corrupt. ";
        } else if (type === "comedic" && lifestyle === "criminal") {
-           backstory += " was raised by a band of criminals in a traveling carinval. One day, they were found stealing and had to pack up and leave quickly and quietly in the night. They unknowingly left " + name + " behind. <br><br> The next day " + pronoun + " went looking for " + belongPro + " troop but instead stumbled across a party of travelers.  Mistaking " + name + " for a well-known warrior of the same name, the travelers insisted " + pronoun + " join them on their quest. " + name + " quickly complied upon seeing " + belongPro + " troop's latest victim posting hastily made wanted posters throughout the town.";       
+           backstory += " was raised by a band of criminals in a traveling carnival. One day, they were found stealing and had to pack up and leave quickly and quietly in the night. They unknowingly left " + name + " behind. <br><br> The next day " + pronoun + " went looking for " + belongPro + " troop but instead stumbled across a party of travelers.  Mistaking " + name + " for a well-known warrior of the same name, the travelers insisted " + pronoun + " join them on their quest. " + name + " quickly complied upon seeing " + belongPro + " troop's latest victim posting hastily made wanted posters throughout the town.";       
        } else if (type === "comedic" && lifestyle === "noble") {
            backstory += " was a naive noble who had only known pleasure and riches all " + belongPro + " life. One fateful day, " + pronoun + " got terribly lost while riding in the " + landfeat + " of " + country + ". After several days, " + name + " came across a group of travelers who did not know the way back to " + name + "'s home, heartily invited " + belongPro + " to join them. ";
        } else if (type === "comedic" && lifestyle === "soldier") {
