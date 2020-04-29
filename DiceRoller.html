@@ -38,21 +38,7 @@
     
 <img src="https://thumbs.gfycat.com/CompleteCornyGalago-size_restricted.gif" alt="Rolling dice" style="width: 300px; height: 250px; opacity: 0.6; padding-left: 40%">
     
-<div style="padding-left: 10%;">
-    <label for="timerTitle" id="timeLabel">
-          Set a timer:
-    </label>
-    <p>Minutes
-        <input type="text" id="amountMin" /> </p>
-    <p>Seconds
-        <input type="text" id="amountSec" /> </p>
-    <button type="button" id="startTimer">Start Timer</button>
-    <button onclick="clearInterval(myVar)">Stop time</button>
-</div>
-<p id="timer"></p>
-
 <script>
-    var timeStart = false;
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
@@ -66,32 +52,6 @@ function clearInput() {
     document.getElementById("inputNumber").value = "";
     document.getElementById("roll").innerHTML = " ";
 }
-function timer() {
-    var min = document.getElementById("amountMin").value;
-    var sec = document.getElementById("amountSec").value;
-    var myVar = setInterval(function(){ myTimer(min, sec); }, 1000);
-}
-function myTimer(min, sec) {
-    var timeString;
-    //var timerSec = sec;
-    //var timerMin = min;
-    sec--;
-    if (sec < 0) {
-        min--;
-        sec = 59;
-    }
-    timeString = "Time left: " + min + " mintues and " + sec + " seconds.";
-    if (min < 0){
-        timeString = "Ran out of Time...";
-        alert("Out of time");
-        clearInterval(myVar);
-    }
-    else{
-        var myVar = setInterval(function(){ myTimer(min, sec); }, 1000);
-    }
-    document.getElementById("timer").innerHTML = timeString;
-}
-    
 var submitButton = document.getElementById("RandomButton");
 if (submitButton.addEventListener) {
     submitButton.addEventListener("click", getUserInput, false);
@@ -106,13 +66,6 @@ if (clearButton.addEventListener) {
 }
 else if (clearButton.attachEvent) {
 	clearButton.attachEvent("onclick", clearInput);
-}
-    var timerButton = document.getElementById("startTimer");
-if (timerButton.addEventListener) {
-    timerButton.addEventListener("click", timer, false);
-}
-else if (timerButton.attachEvent) {
-	timerButton.attachEvent("onclick", timer);
 }
 </script>
     
