@@ -72,9 +72,9 @@ var surNames = ["Clethtinthaillor", "Daardendrian", "Delmireev", "Drachedandio",
 		var message = document.querySelector('#sonic');
 
         
-        landArr = ["forest", "mountains", "fields", "desert", "marshes", "swamp", "valley"];
+        var landArr = ["forest", "mountains", "fields", "desert", "marshes", "swamp", "valley"];
 
-        countryArr = ["Gondor", "Mordor", "Genosha", "Arendelle", "Atlantis", "Wakanda", "Florin", "Guilder", "Britannia", 
+        var countryArr = ["Gondor", "Mordor", "Genosha", "Arendelle", "Atlantis", "Wakanda", "Florin", "Guilder", "Britannia", 
 		"Luftnarp", "Sokovia", "Themyscira", "Attilan", "England", "Italy", "America", "Japan", "South Korea", "China", "Egypt",
 		"Romania", "Night Vale", "Desert Bluffs", "Mexico", "Canada", "Argentina", "Uganda"];
 
@@ -258,7 +258,19 @@ function generateBackstory() {
 
 			clazzIndex = document.getElementById("8");
 			clazz = clazzIndex.options[clazzIndex.selectedIndex].value;
-	}	
+	} else {
+            // pick random value for name
+        if (name === "Name"){
+            name = mainArr[1][randoNum(3) - 1];
+        }
+
+        // pick random value for size
+        if (clazz === clazzIndex[0].value)
+        {
+            clazz = clazzIndex.options[randoNum(12)].value;
+        }
+
+    }
     
         country = document.getElementById("country").value;
         landfeat = document.getElementById("landfeat").value;
@@ -287,16 +299,6 @@ function generateBackstory() {
     }
 
     
-    // pick random value for name
-    if (name === "Name"){
-        name = mainArr[1][randoNum(3) - 1];
-    }
-    
-    // pick random value for size
-    if (clazz === clazzIndex[0].value)
-	{
-		clazz = clazzIndex.options[randoNum(12)].value;
-	}
 
 	// pick random values for lifestyle
 	if (lifestyle === lifestyleIndex[0].value)
